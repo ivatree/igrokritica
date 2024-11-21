@@ -1,0 +1,117 @@
+footer {
+  display: grid;
+  width: 100%;
+  height: max-content;
+  justify-content: center;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3137254902);
+  font-family: "PIXY";
+  background-color: rgba(0, 0, 0, 0.7);
+  filter: blur(10%);
+}
+footer h2 {
+  color: #ffffff;
+  margin: 5%;
+}
+footer .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.2s;
+}
+footer .logo:hover .img {
+  background-image: url("/icon/logo.gif");
+}
+footer .logo:hover .name {
+  color: rgb(255, 0, 0);
+  transition: color 0.2s;
+}
+footer .logo .img {
+  width: 50px;
+  height: 50px;
+  background-image: url("/icon/logo.png");
+  background-size: 50px 50px;
+}
+footer .logo .name {
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-family: "PIXY";
+  font-size: 30px;
+  transition: color 0.2s;
+}
+footer .containerForInfo {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 15%;
+  width: 100%;
+  margin-bottom: 5%;
+  line-height: 100%;
+}
+@media (max-width: 767px) {
+  footer .containerForInfo {
+    width: 300px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  footer .containerForInfo {
+    width: 400px;
+  }
+}
+@media (min-width: 991px) and (max-width: 1199px) {
+  footer .containerForInfo {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  footer .containerForInfo {
+    width: 100%;
+  }
+}
+footer .containerForInfo h2 {
+  margin-bottom: 10%;
+}
+footer .containerForInfo a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5647058824);
+  transition: all 0.2s;
+}
+footer .containerForInfo a:hover {
+  color: red;
+}
+footer .containerForInfo .info {
+  display: grid;
+}
+footer .containerForInfo .links {
+  color: rgba(255, 255, 255, 0.5647058824);
+}
+footer .containerForInfo .links img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.2s;
+}
+footer .containerForInfo .links img:hover {
+  transform: scale(1.07);
+  transition: transform 0.2s;
+  filter: sepia(3) hue-rotate(-70deg) saturate(1000);
+}
+footer .containerForInfo .friends {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer .containerForInfo .friends a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+footer .containerForInfo .friends a img {
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+/*# sourceMappingURL=footer.css.map */

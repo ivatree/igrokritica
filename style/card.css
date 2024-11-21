@@ -1,0 +1,145 @@
+.New, .Future {
+  width: max-content;
+  height: max-content;
+  margin: 5%;
+  display: flex;
+  flex-flow: column;
+  justify-self: center;
+}
+.New .Title, .Future .Title {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  gap: 1%;
+}
+.New .Title .TitleText, .Future .Title .TitleText {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  width: 93.5%;
+  height: 50px;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 2%;
+}
+.New .Title .TitleText h1, .Future .Title .TitleText h1 {
+  font-family: "PIXY";
+  color: #ffffff;
+  letter-spacing: 3px;
+}
+.New .Title .TitleText .NewGame, .Future .Title .TitleText .NewGame {
+  color: rgba(255, 255, 255, 0.5647058824);
+  font-family: "PIXY";
+  transition: all 0.1s;
+}
+.New .Title .TitleText .NewGame:hover, .Future .Title .TitleText .NewGame:hover {
+  color: #ffffff;
+}
+.New .Title .funcBtn, .Future .Title .funcBtn {
+  float: right;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 20%;
+  align-items: flex-end;
+}
+.New .Title .funcBtn .btn, .Future .Title .funcBtn .btn {
+  padding-top: 11%;
+  width: 30px;
+  height: 30px;
+  border: none;
+  color: #ffffff;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.New .Title .funcBtn .btn:hover, .Future .Title .funcBtn .btn:hover {
+  color: red;
+}
+.New .containerForGame, .Future .containerForGame {
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+@media (max-width: 767px) {
+  .New .containerForGame, .Future .containerForGame {
+    width: 500px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .New .containerForGame, .Future .containerForGame {
+    width: 800px;
+  }
+}
+@media (min-width: 991px) and (max-width: 1199px) {
+  .New .containerForGame, .Future .containerForGame {
+    width: 1000px;
+  }
+}
+@media (min-width: 1200px) {
+  .New .containerForGame, .Future .containerForGame {
+    width: 1200px;
+  }
+}
+.New .containerForGame .card, .Future .containerForGame .card {
+  font-family: "PIXY";
+  display: grid;
+  grid-template-rows: 75% 15% 10%;
+  width: 160px;
+  height: 300px;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px;
+}
+.New .containerForGame .card:hover, .Future .containerForGame .card:hover {
+  background-color: rgba(255, 255, 255, 0.062745098);
+}
+.New .containerForGame .card:hover h2, .Future .containerForGame .card:hover h2 {
+  color: red;
+  transition: all 0.2s;
+}
+.New .containerForGame .card img, .Future .containerForGame .card img {
+  width: 160px;
+  height: 225px;
+  grid-row: 1;
+}
+.New .containerForGame .card h2, .Future .containerForGame .card h2 {
+  color: #ffffff;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  grid-row: 2;
+  transition: all 0.2s;
+}
+.New .containerForGame .card .GameScore, .Future .containerForGame .card .GameScore {
+  display: flex;
+  align-items: center;
+  grid-row: 3;
+  text-decoration: none;
+}
+.New .containerForGame .card .GameScore #Score, .Future .containerForGame .card .GameScore #Score {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #000000;
+  margin-right: 5px;
+}
+.New .containerForGame .card .GameScore #review, .Future .containerForGame .card .GameScore #review {
+  color: #ffffff;
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=card.css.map */

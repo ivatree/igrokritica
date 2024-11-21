@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>ИгроКритика</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/icon/logo.png" />
+    <link rel="stylesheet" href="/style/header.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/news.css" />
+    <script type="module" src="/script/search.js"></script>
+    <script type="module" src="/script/news.js"></script>
+    <script type="module" src="/script//firebaseauth.js"></script>
+    <script type="module" src="/script/login.js"></script>
+    <style>
+      body {
+        width: auto;
+        top: 0;
+        bottom: 0;
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(
+            rgba(31, 31, 31, 0.7),
+            rgba(0, 0, 0, 0.8)
+          ),
+          url(/pictures/fone.gif);
+        background-size: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="index.html">
+        <div class="img"></div>
+        <p class="name">ИгроКритика</p>
+      </a>
+      <div class="DropDownPages">
+        <button class="menu">&#8801;</button>
+        <div class="openMenu">
+          <span>Навигация</span>
+          <a href="news.html">Новости</a>
+          <a href="katalog.html">Игры</a>
+          <a href="future.html">Ваш топ</a>
+          <a href="future.html">Календарь</a>
+        </div>
+      </div>
+      <div class="pages">
+        <a href="news.html">Новости</a>
+        <div class="dropdown">
+          <a href="katalog.html">Игры</a>
+          <div class="dropdown-content">
+            <div class="column">
+              <p>Категории</p>
+              <a class="platform" href="katalog.html">PlayStation</a>
+              <a class="platform" href="katalog.html">Xbox</a>
+              <a class="platform" href="katalog.html">PC</a>
+              <a class="platform" href="katalog.html">Switch</a>
+              <a class="platform" href="katalog.html">Мобильные</a>
+            </div>
+            <div class="column">
+              <p>Новые релизы</p>
+              <a class="Games" href="katalog.html">Новые игры</a>
+              <a class="Games" href="future.html">Грядушие игры</a>
+              <a class="Games" href="future.html">Игры по подписке</a>
+              <a class="Games" href="GamePage.html?ID=11">Silent Hill 2</a>
+              <a class="Games" href="GamePage.html?ID=14"
+                >Call of Duty: Black Ops 6</a
+              >
+              <a id="allKat" href="katalog.html">ПОСМОТРЕТЬ ВСЕ...</a>
+            </div>
+          </div>
+        </div>
+        <a href="future.html">Ваш топ</a>
+        <a href="future.html">Календарь</a>
+      </div>
+      <div class="input-container">
+        <input id="searchInput" type="text" placeholder="ПОИСК" />
+        <div class="topline"></div>
+        <div class="underline"></div>
+        <div id="searchResults" style="display: none"></div>
+      </div>
+      <div class="RegContainer" id="regCon">
+        <button id="openRegForm">РЕГИСТРАЦИЯ</button>
+        <button id="showKab">кабинет</button>
+        <div id="kabinet">
+          <div class="kabTable">
+            <span class="kabHeader">Личный кабинет</span>
+            <span class="nameText">Имя: <span id="userName"></span></span>
+            <span class="emailText">Email: <span id="userEmail"></span></span>
+            <button id="logOut">Выйти</button>
+          </div>
+        </div>
+        <div id="regForm" class="registrForm" style="display: none">
+          <div class="regContent">
+            <div class="regTable">
+              <div
+                id="signUpMessage"
+                class="messageDiv"
+                style="display: none"
+              ></div>
+              <div class="regHeader">
+                <p class="regText">РЕГИСТРАЦИЯ</p>
+                <button class="close"></button>
+              </div>
+              <div class="selectedForm">
+                <p class="registration">Региcтрация</p>
+                <button class="switchBtn">Авторизация</button>
+              </div>
+              <div class="inputs">
+                <input id="nickname" type="text" placeholder="Имя" />
+                <input id="Email" type="email" placeholder="E-mail" />
+                <input id="Pass" type="password" placeholder="Пароль" />
+              </div>
+              <div class="regBtns">
+                <button class="accept" id="acceptSignUp">Принять</button>
+                <button class="cancel">Отмена</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="authForm" class="registrForm" style="display: none">
+          <div class="authContent">
+            <div class="authTable">
+              <div
+                id="signInMessage"
+                class="messageDiv"
+                style="display: none"
+              ></div>
+              <div class="authHeader">
+                <p class="authText">Авторизация</p>
+                <button class="close"></button>
+              </div>
+              <div class="selectedForm">
+                <button class="switchBtn">Региcтрация</button>
+                <p class="login">Авторизация</p>
+              </div>
+              <div class="inputs">
+                <input id="email" type="email" placeholder="E-mail" />
+                <input id="pass" type="password" placeholder="Пароль" />
+              </div>
+              <div class="regBtns">
+                <button class="accept" id="acceptSignIn">Принять</button>
+                <button class="cancel">Отмена</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="newsHeaderContainer">
+      <div class="newsHeader">
+        <h1>новости</h1>
+        <p>Последние из мира игр</p>
+      </div>
+    </div>
+    <div class="newsTable">
+      <div id="newsContainer">
+        <!-- контейнер для новостей -->
+      </div>
+    </div>
+    <footer>
+      <a class="logo" href="index.html">
+        <div class="img"></div>
+        <p class="name">ИгроКритика</p>
+      </a>
+      <div class="containerForInfo">
+        <div class="info">
+          <h2>Обзор</h2>
+          <a href="about.html">О нас</a><br />
+          <a href="https://www.fandom.com/privacy-policy-pp1"
+            >Политика конфиденциальности</a
+          ><br />
+          <a href="https://www.fandom.com/terms-of-service-pp1"
+            >Условия использования</a
+          ><br />
+          <a href="https://www.fandom.com/digital-services-act-metacritic"
+            >Закон о цифровых услугах</a
+          >
+        </div>
+        <div class="containerForLinks">
+          <div class="links">
+            <h2>Следите за нами</h2>
+            <a
+              title="Instagram"
+              class="inst"
+              href="https://www.instagram.com/_ivatree_?igsh=MWI1dHV6bWJxaHI0cQ=="
+              ><img src="/icon/instWhite.png"
+            /></a>
+            <a
+              title="STEAM"
+              class="steam"
+              href="https://steamcommunity.com/id/ivatree414/"
+              ><img src="/icon/SteamWhite.png"
+            /></a>
+            <a title="VK" class="vk" href="https://vk.com/ivatree414"
+              ><img src="/icon/vkWhite.png"
+            /></a>
+            <a title="Telegram" class="tg" href="https://t.me/oOlegMayami"
+              ><img src="/icon/tgWhite.png"
+            /></a>
+            <p>© 2024 FANDOM, INC. ALL RIGHTS RESERVED</p>
+          </div>
+        </div>
+        <div class="friends">
+          <h2>Наши друзья</h2>
+          <a href="https://vitgtk.belstu.by/?ysclid=m3pwuivxco977171602"
+            >ВитГТК<img src="/icon/vitgtk.png"
+          /></a>
+          <a href="https://codedot.by/"
+            >CodeDot<img src="/icon/codedot.png"
+          /></a>
+          <a href="https://t.me/little_waii"
+            >Wai Telegram<img src="/icon/tgWhite.png"
+          /></a>
+          <a href="https://steamcommunity.com/id/Ubuvashka"
+            >Wai Steam<img src="/icon/steamWhite.png"
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="/script/regBtn.js"></script>
+    <script src="/script/dropdownpage.js"></script>
+  </body>
+</html>

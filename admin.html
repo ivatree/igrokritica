@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>ИгроКритика</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/icon/logo.png" />
+    <link rel="stylesheet" href="/style/header.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/admin.css" />
+    <link rel="stylesheet" href="/style/addgame.css" />
+    <link rel="stylesheet" href="/style/setgame.css" />
+    <link rel="stylesheet" href="/style/successMes.css" />
+    <script type="module" src="/script//firebaseauth.js"></script>
+    <script type="module" src="/script/admin.js"></script>
+    <script type="module" src="/script/addgame.js"></script>
+    <style>
+      body {
+        width: auto;
+        top: 0;
+        bottom: 0;
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(
+            rgba(31, 31, 31, 0.7),
+            rgba(0, 0, 0, 0.8)
+          ),
+          url(/pictures/fone.gif);
+        background-size: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="index.html">
+        <div class="img"></div>
+        <p class="name">ИгроКритика</p>
+      </a>
+      <div class="DropDownPages">
+        <button class="menu">&#8801;</button>
+        <div class="openMenu">
+          <span>Навигация</span>
+          <a href="news.html">Новости</a>
+          <a href="katalog.html">Игры</a>
+          <a href="future.html">Ваш топ</a>
+          <a href="future.html">Календарь</a>
+        </div>
+      </div>
+      <div class="pages">
+        <a href="news.html">Новости</a>
+        <div class="dropdown">
+          <a href="katalog.html">Игры</a>
+          <div class="dropdown-content">
+            <div class="column">
+              <p>Категории</p>
+              <a class="platform" href="katalog.html">PlayStation</a>
+              <a class="platform" href="katalog.html">Xbox</a>
+              <a class="platform" href="katalog.html">PC</a>
+              <a class="platform" href="katalog.html">Switch</a>
+              <a class="platform" href="katalog.html">Мобильные</a>
+            </div>
+            <div class="column">
+              <p>Новые релизы</p>
+              <a class="Games" href="katalog.html">Новые игры</a>
+              <a class="Games" href="future.html">Грядушие игры</a>
+              <a class="Games" href="future.html">Игры по подписке</a>
+              <a class="Games" href="GamePage.html?ID=11">Silent Hill 2</a>
+              <a class="Games" href="GamePage.html?ID=14"
+                >Call of Duty: Black Ops 6</a
+              >
+              <a id="allKat" href="katalog.html">ПОСМОТРЕТЬ ВСЕ...</a>
+            </div>
+          </div>
+        </div>
+        <a href="future.html">Ваш топ</a>
+        <a href="future.html">Календарь</a>
+      </div>
+      <div class="input-container">
+        <input id="searchInput" type="text" placeholder="ПОИСК" />
+        <div class="topline"></div>
+        <div class="underline"></div>
+        <div id="searchResults" style="display: none"></div>
+      </div>
+      <div class="RegContainer" id="regCon">
+        <button id="openRegForm">РЕГИСТРАЦИЯ</button>
+        <button id="showKab">кабинет</button>
+        <div id="kabinet">
+          <div class="kabTable">
+            <span class="kabHeader">Личный кабинет</span>
+            <span class="nameText">Имя: <span id="userName"></span></span>
+            <span class="emailText">Email: <span id="userEmail"></span></span>
+            <button id="logOut">Выйти</button>
+          </div>
+        </div>
+        <div id="regForm" class="registrForm" style="display: none">
+          <div class="regContent">
+            <div class="regTable">
+              <div
+                id="signUpMessage"
+                class="messageDiv"
+                style="display: none"
+              ></div>
+              <div class="regHeader">
+                <p class="regText">РЕГИСТРАЦИЯ</p>
+                <button class="close"></button>
+              </div>
+              <div class="selectedForm">
+                <p class="registration">Региcтрация</p>
+                <button class="switchBtn">Авторизация</button>
+              </div>
+              <div class="inputs">
+                <input id="nickname" type="text" placeholder="Имя" />
+                <input id="Email" type="email" placeholder="E-mail" />
+                <input id="Pass" type="password" placeholder="Пароль" />
+              </div>
+              <div class="regBtns">
+                <button class="accept" id="acceptSignUp">Принять</button>
+                <button class="cancel">Отмена</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="authForm" class="registrForm" style="display: none">
+          <div class="authContent">
+            <div class="authTable">
+              <div
+                id="signInMessage"
+                class="messageDiv"
+                style="display: none"
+              ></div>
+              <div class="authHeader">
+                <p class="authText">Авторизация</p>
+                <button class="close"></button>
+              </div>
+              <div class="selectedForm">
+                <button class="switchBtn">Региcтрация</button>
+                <p class="login">Авторизация</p>
+              </div>
+              <div class="inputs">
+                <input id="email" type="email" placeholder="E-mail" />
+                <input id="pass" type="password" placeholder="Пароль" />
+              </div>
+              <div class="regBtns">
+                <button class="accept" id="acceptSignIn">Принять</button>
+                <button class="cancel">Отмена</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="containerForAllGames">
+      <div class="adminInfo">
+        <div class="btnForChanges">
+          <button class="addBtn" id="changeGames" title="Игры">загурзить игры</button>
+          <button class="addNewGame" id="addNewGame" title="Добавить">
+              <img src="/icon/add.png" />
+          </button>
+          <button class="addBtn" id="changeNews" title="Новости">загурзить новости</button>
+          <button class="addNewGame" id="addNewNews" title="Добавить">
+            <img src="/icon/add.png" />
+        </button>
+        </div>
+        <div id="addGameForm" class="addGame" style="display: none">
+          <div class="addContent">
+            <div class="addTable">
+              <div class="addHeader">
+                <p class="addText">Добавление игры</p>
+                <button id="closeAdd" class="close"></button>
+              </div>
+              <form id="addBody">
+                <div class="side">
+                  <p>Введите название игры:</p>
+                  <input type="text" id="gameNames" />
+                  <p>Введите дату выхода игры:</p>
+                  <input type="date" id="gameDate" />
+                  <p>Введите разработчиков:</p>
+                  <input type="text" id="gameDeveloper" />
+                  <p>Введите издателя:</p>
+                  <input type="text" id="gamePublisher" />
+                  <p>Введите цену:</p>
+                  <input type="number" id="gameCost" />
+                </div>
+                <div class="side">
+                  <p>Отзывы критиков:</p>
+                  <div id="criticReviewInput">
+                    <span>наведи на меня</span>
+                    <ul>
+                      <li>
+                        <p>Названия критиков:</p>
+                        <input type="text" id="criticReviewName" />
+                      </li>
+                      <li>
+                        <p>Оценка критиков:</p>
+                        <input type="number" id="criticReviewScore" />
+                      </li>
+                      <li>
+                        <p>Ссылка на критиков:</p>
+                        <input type="text" id="criticReviewLink" />
+                      </li>
+                      <li>
+                        <p>Ссылка на критиков:</p>
+                        <textarea id="criticReviewDescription"></textarea>
+                      </li>
+                      <li>
+                        <button id="addCriticReview">Добавить</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <p>Введите жанр игры:</p>
+                  <input type="text" id="gameGenre" />
+                  <p>Введите ссылку на изображение игры:</p>
+                  <input type="text" id="gameImageLink" />
+                  <p>Введите ссылку на трейлер игры:</p>
+                  <input type="text" id="gameTrailerLink" />
+                  <p>Ссылка на картинку ESRB:</p>
+                  <input type="text" id="linkEsrb" />
+                </div>
+                <div class="side">
+                  <p>Введите ссылку на сайт игры:</p>
+                  <input type="text" id="devLinks" />
+                  <p>Введите оценку пользователей:</p>
+                  <input type="number" id="gameUserScore" />
+                  <p>Введите оценку критиков:</p>
+                  <input type="number" id="gameCriticScore" />
+                  <p>выбор платформ</p>
+                  <div id="platformsAdd">
+                    <span>наведи на меня</span>
+                    <ul>
+                      <li>
+                        <label class="titlePlatform" for="ps3"
+                          >PlayStation 3</label
+                        >
+                        <input type="checkbox" id="ps3" />
+                        <p>Оценка:</p>
+                        <input
+                          class="scoreForPlatform"
+                          type="number"
+                          id="ps3s"
+                        />
+                      </li>
+                      <li>
+                        <label class="titlePlatform" for="ps4"
+                          >PlayStation 4</label
+                        >
+                        <input type="checkbox" id="ps4" />
+                        <p>Оценка:</p>
+                        <input
+                          class="scoreForPlatform"
+                          type="number"
+                          id="ps4s"
+                        />
+                      </li>
+                      <li>
+                        <label class="titlePlatform" for="ps5"
+                          >PlayStation 5</label
+                        >
+                        <input type="checkbox" id="ps5" />
+                        <p>Оценка:</p>
+                        <input
+                          class="scoreForPlatform"
+                          type="number"
+                          id="ps5s"
+                        />
+                      </li>
+                      <li>
+                        <label class="titlePlatform" for="pc">PC</label>
+                        <input type="checkbox" id="pc" />
+                        <p>Оценка:</p>
+                        <input
+                          class="scoreForPlatform"
+                          type="number"
+                          id="pcs"
+                        />
+                      </li>
+                      <li>
+                        <label class="titlePlatform" for="xbox360"
+                          >Xbox 360</label
+                        >
+                        <input type="checkbox" id="xbox360" />
+                        <p>Оценка:</p>
+                        <input
+                          class="scoreForPlatform"
+                          type="number"
+                          id="xbox360s"
+                        />
+                      </li>
+                      <li>
+                        <label class="titlePlatform" for="xbox">Xbox One</label>
+                        <input type="checkbox" id="xbox" />
+                        <p>Оценка:</p>
+                        <input
+                          class="scoreForPlatform"
+                          type="number"
+                          id="xboxs"
+                        />
+                      </li>
+                      <li>
+                        <label class="titlePlatform" for="xboxx">Xbox X</label>
+                        <input type="checkbox" id="xboxx" />
+                        <p>Оценка:</p>
+                        <input
+                          class="scoreForPlatform"
+                          type="number"
+                          id="xboxxs"
+                        />
+                      </li>
+                      <li>
+                        <label class="titlePlatform" for="ns"
+                          >Nintendo Switch</label
+                        >
+                        <input type="checkbox" id="ns" />
+                        <p>Оценка:</p>
+                        <input
+                          class="scoreForPlatform"
+                          type="number"
+                          id="nss"
+                        />
+                      </li>
+                      <li>
+                        <label class="titlePlatform" for="ios">IOS</label>
+                        <input type="checkbox" id="ios" />
+                        <p>Оценка:</p>
+                        <input
+                          class="scoreForPlatform"
+                          type="number"
+                          id="ioss"
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="textareaInput">
+                  <p>Введите описание игры:</p>
+                  <textarea type="text" id="gameDescription"></textarea>
+                </div>
+                <div class="btnCon">
+                  <button id="acceptAdding" type="submit">Добавить</button>
+                  <button class="canelAdding">Отмена</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="addGameMes" class="addMes" style="display: none">
+          <div class="addMesCon">
+            <div class="addMesTable">
+              <div class="addMesHead">
+                <p class="addMesTitle">Успешное добавление</p>
+              </div>
+              <form id="addMesForm" class="addMesForm">
+                <span class="addMesText">Игра была успешно записана в БД!</span>
+                <span class="addMesText">Игра добавлена на страницу!</span>
+                <button id="acceptGameMesBtn" class="acceptMesBtn">ок</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="addNewsForm" class="addNews" style="display: none;">
+          <div class="addNewsContent">
+            <div class="addNewsTable">
+              <div class="addNewsHeader">
+                <p class="addNewsText">Добавление новости</p>
+                <button id="closeNewsAdd" class="close"></button>
+              </div>
+                <form id="addNewsBody">
+                  <label for="newsPicture">Добавить изображение:</label>
+                  <input id="newsPicture">
+                  <label for="newsLink">Добавить ссылку на статью:</label>
+                  <input id="newsLink">
+                  <label for="newsTitle">Добавить заголовок статьи:</label>
+                  <input id="newsTitle">
+                  <label for="newsDescription">Добавить содержание статьи:</label>
+                  <textarea id="newsDescription"></textarea>
+                  <div class="newsSaveBtn">
+                    <button id="acceptNewsAdding" type="submit">Добавить</button>
+                    <button class="canelAdding">Отмена</button>
+                  </div>
+                </form>
+            </div>
+          </div>
+        </div>
+        <div id="addNewsMes" class="addMes" style="display: none">
+          <div class="addMesCon">
+            <div class="addMesTable">
+              <div class="addMesHead">
+                <p class="addMesTitle">Успешное добавление</p>
+              </div>
+              <form id="addNewsMesForm" class="addMesForm">
+                <span class="addMesText">Новость была успешно записана в БД!</span>
+                <span class="addMesText">Новость добавлена на страницу!</span>
+                <button id="acceptNewsMesBtn" class="acceptMesBtn">ок</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="adminDescription">
+          <h1 class="adminTitle">На данной странице вы можете:</h1>
+          <li>Добавлять новые игры и новости</li>
+          <li>Редактировать информацию </li>
+          <li>Удалять игры и нвости</li>
+        </div>
+      </div>
+      <div id="gridTable">
+        <div id="setTable" class="setTable" style="display: none">
+          <div class="setCont">
+            <div class="setGameTable">
+              <div class="setHeader">
+                <p class="setTitle">Редактирование</p>
+                <button id="closeSet" class="close"></button>
+              </div>
+              <form id="setForm">
+                <div id="sideSet">
+                  <label for="setGamePreview">Сменить изображение:</label>
+                  <input type="text" id="setGamePreview">
+                  <label for="gameSetName">Сменить название:</label>
+                  <input type="text" id="gameSetName"></input>
+                  <label for="gameSetLink">Сменить ссылку:</label>
+                  <input id="gameSetLink"></input>
+                  <label for="gameSetTrailer">Сменить ссылку на трейлер:</label>
+                  <input type="text" id="gameSetTrailer"></input>
+                  <label for="gameSetDate">Сменить дату:</label>
+                  <input type="date" id="gameSetDate"></input>
+                </div>
+                <div id="sideSet">
+                  <label for="setGameCost">Сменить цену:</label>
+                  <input type="number" id="setGameCost" step="0.01"></input>
+                  <label for="setGameDev">Сменить разработчиков:</label>
+                  <input type="text" id="setGameDev"></input>
+                  <label for="setGmaePublisher">Сменить издателя:</label>
+                  <input type="text" id="setGamePublisher"></input>
+                  <label for="setGameGenre">Сменить жанр:</label>
+                  <input type="text" id="setGameGenre"></input>
+                </div>
+                <div class="platformCont">
+                  <label for="setPlatform">Выбор платформ:</label>
+                  <div id="setPlatform" >
+                  <ul>
+                    <li>
+                      <input type="checkbox" id="setPS3" />
+                      <label class="titlePlatform" for="setPS3"
+                        >PlayStation 3</label
+                      >
+                    </li>
+                    <li>
+                      <input type="checkbox" id="setPS4" />
+                      <label class="titlePlatform" for="setPS4"
+                        >PlayStation 4</label
+                      >
+                    </li>
+                    <li>
+                      <input type="checkbox" id="setPS5" />
+                      <label class="titlePlatform" for="setPS5"
+                        >PlayStation 5</label
+                      >
+                    </li>
+                    <li>
+                      <input type="checkbox" id="setPC" />
+                      <label class="titlePlatform" for="setPC">PC</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="setXbox360" />
+                      <label class="titlePlatform" for="setXbox360"
+                        >Xbox 360</label
+                      >
+                    </li>
+                    <li>
+                      <input type="checkbox" id="setXbox" />
+                      <label class="titlePlatform" for="setXbox">Xbox One</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="setXboxX" />
+                      <label class="titlePlatform" for="setXboxX">Xbox X</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="setNs" />
+                      <label class="titlePlatform" for="setNs"
+                        >Nintendo Switch</label
+                      >
+                    </li>
+                    <li>
+                      <input type="checkbox" id="setIos" />
+                      <label class="titlePlatform" for="setIos">IOS</label>
+                    </li>
+                  </ul>
+                  </div>
+                </div>
+                <div class="descCont">
+                  <label for="gameSetDesc">Изменить описание:</label>
+                  <textarea id="gameSetDesc"></textarea>
+                </div>
+                <button id="saveChanges">Сохранить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="setGameMes" class="addMes" style="display: none">
+          <div class="addMesCon">
+            <div class="addMesTable">
+              <div class="addMesHead">
+                <p class="addMesTitle">Успешное редактирование</p>
+              </div>
+              <form id="setMesForm" class="addMesForm">
+                <span class="addMesText">Новые данные были успешно добавлены в БД!</span>
+                <span class="addMesText">Игра с новыми данными добавлена на страницу!</span>
+                <button id="setGameMesBtn" class="acceptMesBtn">ок</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="setNewsTable" class="setNewsTable" style="display: none">
+          <div class="setNewsCont">
+            <div class="newsTable">
+              <div class="setNewsHeader">
+                <p class="setNewsTitle">Редактирование</p>
+                <button id="closeNewsSet" class="close"></button>
+              </div>
+              <form id="setNewsForm">
+                <label for="setNewsName">Изменить название статьи:</label>
+                <input id="setNewsName" type="text">
+                <label for="setNewsImg">Изменить изображение:</label>
+                <input id="setNewsImg" type="text">
+                <label for="setNewsLink">Изменить ссылку на источник:</label>
+                <input id="setNewsLink" type="text">
+                <label for="setNewsDesc">Изменить содержание статьи:</label>
+                <textarea id="setNewsDesc" type="text"></textarea>
+                <button id="saveEditNews">Сохранить</button>
+              </form>
+            </div>
+          </div> 
+        </div>
+        <div id="setNewsMes" class="addMes" style="display: none">
+          <div class="addMesCon">
+            <div class="addMesTable">
+              <div class="addMesHead">
+                <p class="addMesTitle">Успешное редактирование </p>
+              </div>
+              <form id="setNewsMesForm" class="addMesForm">
+                <span class="addMesText">Новые данные были успешно добавлены в БД!</span>
+                <span class="addMesText">Новость с новыми данными добавлена на страницу!</span>
+                <button id="setNewsMesBtn" class="acceptMesBtn">ок</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <a class="logo" href="index.html">
+        <div class="img"></div>
+        <p class="name">ИгроКритика</p>
+      </a>
+      <div class="containerForInfo">
+        <div class="info">
+          <h2>Обзор</h2>
+          <a href="about.html">О нас</a><br />
+          <a href="https://www.fandom.com/privacy-policy-pp1"
+            >Политика конфиденциальности</a
+          ><br />
+          <a href="https://www.fandom.com/terms-of-service-pp1"
+            >Условия использования</a
+          ><br />
+          <a href="https://www.fandom.com/digital-services-act-metacritic"
+            >Закон о цифровых услугах</a
+          >
+        </div>
+        <div class="containerForLinks">
+          <div class="links">
+            <h2>Следите за нами</h2>
+            <a
+              title="Instagram"
+              class="inst"
+              href="https://www.instagram.com/_ivatree_?igsh=MWI1dHV6bWJxaHI0cQ=="
+              ><img src="/icon/instWhite.png"
+            /></a>
+            <a
+              title="STEAM"
+              class="steam"
+              href="https://steamcommunity.com/id/ivatree414/"
+              ><img src="/icon/SteamWhite.png"
+            /></a>
+            <a title="VK" class="vk" href="https://vk.com/ivatree414"
+              ><img src="/icon/vkWhite.png"
+            /></a>
+            <a title="Telegram" class="tg" href="https://t.me/oOlegMayami"
+              ><img src="/icon/tgWhite.png"
+            /></a>
+            <p>© 2024 FANDOM, INC. ALL RIGHTS RESERVED</p>
+          </div>
+        </div>
+        <div class="friends">
+          <h2>Наши друзья</h2>
+          <a href="https://vitgtk.belstu.by/?ysclid=m3pwuivxco977171602"
+            >ВитГТК<img src="/icon/vitgtk.png"
+          /></a>
+          <a href="https://codedot.by/"
+            >CodeDot<img src="/icon/codedot.png"
+          /></a>
+          <a href="https://t.me/little_waii"
+            >Wai Telegram<img src="/icon/tgWhite.png"
+          /></a>
+          <a href="https://steamcommunity.com/id/Ubuvashka"
+            >Wai Steam<img src="/icon/steamWhite.png"
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="/script/regBtn.js"></script>
+    <script src="/script/dropdownpage.js"></script>
+    <script src="/script/adminBtn.js"></script>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+.gridTableHeader {
+  display: flex;
+  justify-content: center;
+  font-family: "PIXY";
+}
+.gridTableHeader .head {
+  width: 1200px;
+}
+.gridTableHeader .head h1 {
+  height: 50px;
+  font-size: 150px;
+  color: #ffffff;
+}
+.gridTableHeader .head p {
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.containerForAllGames {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin: 5%;
+}
+.containerForAllGames #gridTable {
+  width: 1200px;
+  height: max-content;
+  display: grid;
+  grid-template-columns: 30.5% 30.5% 30.5%;
+  grid-column-gap: 34px;
+}
+.containerForAllGames #gridTable .gameCard {
+  text-decoration: none;
+  height: 71%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-column-gap: 5px;
+  grid-template-rows: 15% 15% 52% 10%;
+  padding: 20px;
+  font-family: "PIXY";
+  color: #ffffff;
+  background: linear-gradient(rgba(255, 255, 255, 0.0823529412), rgba(255, 255, 255, 0.062745098));
+  border-bottom: 1px solid #ffffff;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+.containerForAllGames #gridTable .gameCard:hover {
+  transition: all 0.3s;
+  border-bottom: 1px solid #ff0000;
+  box-shadow: 0px 2px #ff0000;
+  background: linear-gradient(rgba(255, 255, 255, 0.2078431373), rgba(255, 255, 255, 0.062745098));
+}
+.containerForAllGames #gridTable .gameCard img {
+  width: 120px;
+  height: 180px;
+  grid-row: 1/4;
+}
+.containerForAllGames #gridTable .gameCard #name {
+  color: #ffffff;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.containerForAllGames #gridTable .gameCard #date {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5843137255);
+}
+.containerForAllGames #gridTable .gameCard #description {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5843137255);
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  line-clamp: 5;
+  overflow: hidden;
+}
+.containerForAllGames #gridTable .gameCard .scoreCont {
+  display: flex;
+  grid-column: 2;
+  grid-row: 4;
+  align-items: center;
+}
+.containerForAllGames #gridTable .gameCard .scoreCont #score {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  background-color: #00ce7a;
+  color: #000000;
+  font-size: 17px;
+  margin-right: 5px;
+}
+.containerForAllGames #gridTable .gameCard .scoreCont #scoreText {
+  font-family: "PIXY";
+  color: #ffffff;
+  font-size: 12px;
+  margin-top: 4px;
+}
+.containerForAllGames .settigns {
+  height: max-content;
+  font-family: "PIXY";
+  color: #ffffff;
+  background: linear-gradient(rgba(255, 255, 255, 0.062745098), rgba(255, 255, 255, 0));
+  padding: 30px;
+}
+.containerForAllGames .settigns .setHeader {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ffffff;
+  width: 100%;
+}
+.containerForAllGames .settigns .setHeader h1 {
+  width: 100%;
+  height: 30px;
+}
+.containerForAllGames .settigns .setHeader .deleteSortBtn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  transition: all 0.2s;
+  background-image: url("/icon/reset.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(0deg);
+}
+.containerForAllGames .settigns .setHeader .deleteSortBtn:hover {
+  transform: rotate(-360deg);
+  background-image: url("/icon/resetr.png");
+  transition: all 0.5s;
+}
+.containerForAllGames .settigns .filter {
+  display: grid;
+  width: 100%;
+  height: max-content;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 30px;
+}
+.containerForAllGames .settigns .filter .sortList {
+  height: 120px;
+  max-height: 120px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+.containerForAllGames .settigns .filter .sortList div {
+  display: flex;
+  justify-self: left;
+}
+.containerForAllGames .settigns .filter .sortList div .button-custom, .containerForAllGames .settigns .filter .sortList div .button-platform, .containerForAllGames .settigns .filter .sortList div .button-options {
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: "PIXY";
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-self: left;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+.containerForAllGames .settigns .filter .sortList div .button-custom:hover, .containerForAllGames .settigns .filter .sortList div .button-platform:hover, .containerForAllGames .settigns .filter .sortList div .button-options:hover {
+  font-weight: 600;
+  color: red;
+}
+.containerForAllGames .settigns .filter .sortList div .button-custom:hover .checkbox, .containerForAllGames .settigns .filter .sortList div .button-platform:hover .checkbox, .containerForAllGames .settigns .filter .sortList div .button-options:hover .checkbox {
+  border-color: #ffffff;
+  transition: all 0.2s;
+}
+.containerForAllGames .settigns .filter .sortList div .button-custom label, .containerForAllGames .settigns .filter .sortList div .button-platform label, .containerForAllGames .settigns .filter .sortList div .button-options label {
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.containerForAllGames .settigns .filter .sortList div .button-custom .checkbox, .containerForAllGames .settigns .filter .sortList div .button-platform .checkbox, .containerForAllGames .settigns .filter .sortList div .button-options .checkbox {
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1882352941);
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.containerForAllGames .settigns .filter .sortList div .button-custom .checkbox img, .containerForAllGames .settigns .filter .sortList div .button-platform .checkbox img, .containerForAllGames .settigns .filter .sortList div .button-options .checkbox img {
+  display: none;
+  width: 18px;
+}
+.containerForAllGames .settigns .filter .sortList div .clicked {
+  font-weight: 600;
+  color: red;
+}
+.containerForAllGames .settigns .filter .sortList div .clicked .checkbox {
+  border-color: #ffffff;
+}
+.containerForAllGames .settigns .filter .sortList div .clicked .checkbox img {
+  display: block;
+  width: 18px;
+}
+.containerForAllGames .settigns .filter .hideAndSick {
+  width: 100%;
+  height: 100%;
+}
+.containerForAllGames .settigns .filter .hideAndSick button {
+  font-family: "PIXY";
+  width: 100%;
+  height: 30px;
+  color: rgba(255, 255, 255, 0.5647058824);
+  background-color: transparent;
+  border: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.containerForAllGames .settigns .filter .hideAndSick button:hover {
+  color: #ff0000;
+  transition: all 0.2s;
+}
+
+/*# sourceMappingURL=katalog.css.map */

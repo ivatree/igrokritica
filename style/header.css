@@ -1,0 +1,410 @@
+@font-face {
+  font-family: "PIXY bold";
+  src: url(/font/Pixy.ttf);
+}
+header {
+  top: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3137254902);
+  background-color: rgba(0, 0, 0, 0.7);
+  filter: blur(10%);
+  gap: 2%;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.2s;
+}
+header .logo:hover .img {
+  background-image: url("/icon/logo.gif");
+}
+header .logo:hover .name {
+  color: rgb(255, 0, 0);
+  transition: color 0.2s;
+}
+header .logo .img {
+  width: 50px;
+  height: 50px;
+  background-image: url("/icon/logo.png");
+  background-size: 50px 50px;
+}
+header .logo .name {
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-family: "PIXY";
+  font-size: 25px;
+  transition: color 0.2s;
+}
+header .DropDownPages {
+  font-family: "PIXY";
+  display: none;
+}
+@media (max-width: 767px) {
+  header .DropDownPages {
+    display: block;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header .DropDownPages {
+    display: block;
+  }
+}
+header .DropDownPages .menu {
+  width: 35px;
+  height: 35px;
+  font-size: 30px;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+header .DropDownPages .menu:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+header .DropDownPages .menu:active {
+  color: #000000;
+  background-color: #ffffff;
+}
+header .DropDownPages .openMenu {
+  position: absolute;
+  display: none;
+  background-color: #1a1a1a;
+  padding: 15px;
+  z-index: 1;
+  text-align: left;
+  box-shadow: 7px 7px 0px 0px #ffffff;
+  border: 2px solid #ffffff;
+  border-top: none;
+  border-bottom: none;
+  line-height: 25px;
+}
+header .DropDownPages .openMenu span {
+  display: flex;
+  color: rgba(255, 255, 255, 0.5647058824);
+  font-size: 20px;
+  padding: 10px;
+}
+header .DropDownPages .openMenu a {
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  color: white;
+  transition: all 0.2s;
+}
+header .DropDownPages .openMenu a:hover {
+  transition: all 0.2s;
+  color: red;
+  transform: translate3d(5px, 0px, 0px);
+}
+header .pages {
+  height: 100%;
+  font-family: "PIXY";
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  header .pages {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header .pages {
+    display: none;
+  }
+}
+header .pages a {
+  padding: 10px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5647058824);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+header .pages a:hover {
+  transition: all 0.2s;
+  color: red;
+}
+header .pages .dropdown {
+  position: relative;
+}
+header .pages .dropdown:hover .dropdown-content {
+  display: block;
+}
+header .pages .dropdown .dropdown-content {
+  position: absolute;
+  display: none;
+  background-color: #1a1a1a;
+  padding: 15px;
+  min-width: 400px;
+  z-index: 1;
+  text-align: left;
+  box-shadow: 7px 7px 0px 0px #ffffff;
+  border: 2px solid #ffffff;
+  border-top: none;
+  border-bottom: none;
+}
+header .pages .dropdown .dropdown-content .column {
+  line-height: 10px;
+  width: 49%;
+  list-style: none;
+  float: left;
+}
+header .pages .dropdown .dropdown-content .column p {
+  display: flex;
+  color: rgba(255, 255, 255, 0.5647058824);
+  font-size: 20px;
+  cursor: default;
+}
+header .pages .dropdown .dropdown-content .column a {
+  font-size: 15px;
+  display: block;
+  color: white;
+}
+header .pages .dropdown .dropdown-content .column a:hover {
+  color: red;
+  transform: translate3d(5px, 0px, 0px);
+}
+header .pages .dropdown .dropdown-content .column #allKat {
+  color: rgba(255, 255, 255, 0.5647058824);
+  font-size: 15px;
+}
+header .pages .dropdown .dropdown-content .column #allKat:hover {
+  color: #ff0000;
+}
+header .input-container {
+  position: relative;
+}
+header .input-container #searchInput {
+  height: 30px;
+  border: 2px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0.1254901961);
+  border-top: none;
+  border-bottom: none;
+  font-family: "PIXY";
+  font-size: 16px;
+  outline: none;
+  box-shadow: 7px 7px 0px 0px #ffffff;
+  transition: all 0.3s;
+  color: #ffffff;
+}
+header .input-container #searchInput:focus {
+  box-shadow: none;
+  transition: all 0.3s;
+}
+header .input-container #searchInput:focus ~ .topline {
+  width: 100%;
+  transition: all 0.3s;
+}
+header .input-container #searchInput:focus ~ .underline {
+  width: 100%;
+  transition: all 0.3s;
+}
+header .input-container #searchInput:focus ~ .underline input:focus ~ .label {
+  top: -10px;
+  transform: scale(1);
+  transition: all 0.3s;
+}
+header .input-container #searchResults {
+  margin-top: 1px;
+  position: absolute;
+  font-family: "PIXY";
+}
+header .input-container #searchResults .cont {
+  width: 356px;
+  padding: 5px;
+  color: #ffffff;
+  text-decoration: none;
+  display: grid;
+  background-color: #1a1a1a;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 30% 30% 35% 5%;
+  transition: all 0.3s;
+  border-bottom: 1px solid #1a1a1a;
+}
+header .input-container #searchResults .cont:hover {
+  background-color: #303030;
+  border-bottom: 1px solid red;
+  transform: translateX(10px);
+  transition: all 0.3s;
+}
+header .input-container #searchResults .cont .searchPrewiew {
+  display: flex;
+  width: 80px;
+  height: 110px;
+  grid-column: 1;
+  grid-row: 1/all;
+}
+header .input-container #searchResults .cont .searchName {
+  font-size: 20px;
+  display: flex;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  grid-column: 2;
+  grid-row: 1;
+}
+header .input-container #searchResults .cont .gameGenre {
+  display: flex;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  grid-column: 2;
+  grid-row: 2;
+}
+header .input-container #searchResults .cont .releseDate {
+  display: flex;
+  flex-wrap: nowrap;
+  grid-column: 2;
+  grid-row: 3;
+}
+header .input-container #searchResults .cont .searchColorLine {
+  grid-column: 2;
+  grid-row: 4;
+  width: 100%;
+  height: 5px;
+}
+header .input-container .topline {
+  position: absolute;
+  content: "";
+  background-color: #ffffff;
+  width: 0%;
+  height: 2px;
+  right: 0;
+  top: 0;
+  transition: all 0.3s;
+}
+header .input-container .underline {
+  position: absolute;
+  content: "";
+  background-color: #ffffff;
+  width: 0%;
+  height: 2px;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s;
+}
+header .RegContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header .RegContainer #openRegForm, header .RegContainer #showKab, header .RegContainer #adminButton {
+  width: 100%;
+  height: 45%;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  font-family: "PIXY";
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+header .RegContainer #openRegForm:hover, header .RegContainer #showKab:hover, header .RegContainer #adminButton:hover {
+  color: rgb(255, 255, 255);
+}
+header .RegContainer #openRegForm:after, header .RegContainer #showKab:after, header .RegContainer #adminButton:after {
+  content: "";
+  background: rgb(0, 0, 0);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+header .RegContainer #openRegForm:hover:after, header .RegContainer #showKab:hover:after, header .RegContainer #adminButton:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+header .RegContainer #kabinet {
+  position: absolute;
+  display: none;
+  background-color: #1a1a1a;
+  padding: 15px;
+  z-index: 1;
+  box-shadow: 7px 7px 0px 0px #ffffff;
+  border: 2px solid #ffffff;
+  line-height: 25px;
+  width: 250px;
+  height: 300px;
+  margin-top: 360px;
+}
+header .RegContainer #kabinet .kabTable {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 10% 35% auto;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  font-family: "PIXY";
+  align-items: center;
+}
+header .RegContainer #kabinet .kabTable .kabHeader {
+  grid-row: 1;
+  font-size: 25px;
+}
+header .RegContainer #kabinet .kabTable .nameText {
+  grid-row: 2;
+  justify-self: baseline;
+  align-self: baseline;
+}
+header .RegContainer #kabinet .kabTable .emailText {
+  grid-row: 3;
+  justify-self: baseline;
+  align-self: baseline;
+}
+header .RegContainer #kabinet .kabTable #logOut {
+  justify-self: center;
+  grid-row: 4;
+  width: 100px;
+  height: 40px;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  font-family: "PIXY";
+  font-size: 18px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+}
+header .RegContainer #kabinet .kabTable #logOut:hover {
+  color: rgb(255, 255, 255);
+  border: 1px solid #ffffff;
+}
+header .RegContainer #kabinet .kabTable #logOut:after {
+  content: "";
+  background: #1a1a1a;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+header .RegContainer #kabinet .kabTable #logOut:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/*# sourceMappingURL=header.css.map */

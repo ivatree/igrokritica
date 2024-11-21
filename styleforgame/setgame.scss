@@ -1,0 +1,223 @@
+#setTable{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(48, 48, 48, 0.7);
+    .setCont{
+        .setGameTable{
+            margin: 5% auto;
+            width: max-content;
+            height: max-content;
+            background-color: #ffffff;
+            box-shadow: 10px 10px 0px 0px black;
+            border: 4px solid #000;
+            padding: 35px;
+            .setHeader{
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid black;
+                margin-bottom: 20px;
+                .setTitle{
+                    font-family: 'PIXY';
+                    font-size: 25px;
+                    width: 840px;
+                }
+                .close{
+                    width: 40px;
+                    height: 40px;
+                    background-color: black;
+                    border: none;
+                    background-image: url(/icon/close.png);
+                    background-size: 25px 25px;
+                    background-repeat: no-repeat;
+                    background-position-x: 49%;
+                    background-position-y: 50%;
+                    border: 3px solid transparent;
+                    transition: all 0.5s;
+                    &:hover{
+                        background-color: red;
+                        border: 3px solid black;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+            #setForm{
+                display: grid;
+                font-family: 'PIXY';
+                grid-template-columns: auto auto auto;
+                #sideSet{
+                    display: grid;
+                    height: max-content;
+                    margin-right: 30px;
+                    input{
+                        margin-bottom: 10px;
+                        width: 300px;
+                        height: 25px;
+                        font-size: 18px;
+                        font-family: 'PIXY';
+                    }
+                }
+                .platformCont{
+                    #setPlatform{
+                        grid-column: 3;
+                        ul{
+                            display: flex;
+                            flex-direction: column;
+                            padding: 0;
+                            li{
+                                display: flex;
+                                align-items: center;
+                                margin-bottom: 5px;
+                                input{
+                                    width: 25px;
+                                    height: 25px;
+                                    margin-bottom: 0;
+                                    border: 3px solid #000000;
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }      
+                }
+                .descCont{
+                    height: 220px;
+                    grid-column: 1/all;
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+                    textarea{
+                        width: 900px;
+                        max-width: 900px;
+                        min-width: 900px;
+                        height: 200px;
+                        max-height: 200px;
+                        min-height: 200px;
+                        font-size: 18px;
+                        font-family: 'PIXY';
+                    }
+                }
+                #saveChanges{
+                    width: 150px;
+                    height: 50px;
+                    grid-column: 1 / all;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    justify-self: center;
+                    font-family: 'PIXY';
+                    font-size: 20px;
+                    background-color: #ffffff;
+                    border: 3px solid #000;
+                    box-shadow: 5px 5px 0px 0px black;
+                    transition: all 0.3s;
+                    letter-spacing: 1px;
+                    &:hover{
+                        background-color: green;
+                        color: #ffffff;
+                        box-shadow: none;
+                        transition: all 0.3s;
+                    }
+                }
+            }
+        }
+    }
+}
+#setNewsTable{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(48, 48, 48, 0.7);
+    .setNewsCont{
+        .newsTable{
+            margin: 5% auto;
+            width: 600px;
+            height: max-content;
+            background-color: #ffffff;
+            box-shadow: 10px 10px 0px 0px black;
+            border: 4px solid #000;
+            padding: 35px;
+            .setNewsHeader{
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid black;
+                margin-bottom: 20px;            
+                .setNewsTitle{
+                    font-family: 'PIXY';
+                    font-size: 25px;
+                    width: 100%;
+                }
+                .close{
+                    width: 40px;
+                    height: 40px;
+                    background-color: black;
+                    border: none;
+                    background-image: url(/icon/close.png);
+                    background-size: 25px 25px;
+                    background-repeat: no-repeat;
+                    background-position-x: 49%;
+                    background-position-y: 50%;
+                    border: 3px solid transparent;
+                    transition: all 0.5s;
+                    &:hover{
+                        background-color: red;
+                        border: 3px solid black;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+            #setNewsForm{
+                display: grid;
+                font-family: 'PIXY';
+                input{
+                    margin-bottom: 10px;
+                    width: 100%;
+                    height: 25px;
+                    font-size: 16px;
+                    font-family: 'PIXY';
+                    padding-inline: 5px;
+                }
+                textarea{
+                    padding-inline: 5px;
+                    font-family: 'PIXY';
+                    font-size: 16px;
+                    width: 100%;
+                    min-height: 200px;
+                    max-height: 200px;
+                    margin-bottom: 30px;
+                }
+                #saveEditNews{
+                    width: 150px;
+                    height: 50px;
+                    grid-column: 1 / all;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    justify-self: center;
+                    font-family: 'PIXY';
+                    font-size: 20px;
+                    background-color: #ffffff;
+                    border: 3px solid #000;
+                    box-shadow: 5px 5px 0px 0px black;
+                    transition: all 0.3s;
+                    letter-spacing: 1px;
+                    &:hover{
+                        background-color: green;
+                        color: #ffffff;
+                        box-shadow: none;
+                        transition: all 0.3s;
+                    }
+                }
+            }
+        }
+    }
+}

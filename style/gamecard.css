@@ -1,0 +1,649 @@
+.table {
+  width: 1200px;
+  margin: 4%;
+  display: grid;
+  grid-template-columns: 60% 38%;
+  justify-self: center;
+  gap: 2%;
+  padding: 2%;
+  margin-bottom: 70px;
+}
+.table .gameTable {
+  height: 100%;
+  font-family: "PIXY";
+  color: #ffffff;
+  display: grid;
+  gap: 1%;
+  grid-template-rows: 55% 45%;
+}
+.table .gameTable #trailer {
+  width: 100%;
+  height: 450px;
+  background: linear-gradient(rgba(255, 255, 255, 0.0823529412), rgba(255, 255, 255, 0.062745098));
+  margin-bottom: 50px;
+}
+.table .gameTable .reviewBox {
+  width: 710px;
+  height: 315px;
+}
+.table .gameTable .reviewBox .reviewHead {
+  width: 100%;
+  border-bottom: 1px solid #ffffff;
+  font-size: 24px;
+  margin-bottom: 2%;
+}
+.table .gameTable .reviewBox #reviewContainer {
+  width: max-content;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 20px;
+}
+.table .gameTable .reviewBox #reviewContainer .reviewCard {
+  padding: 5px;
+  width: 223px;
+  height: 300px;
+  display: grid;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  border: none;
+  background: linear-gradient(rgba(255, 255, 255, 0.0823529412), rgba(255, 255, 255, 0.062745098));
+  grid-template-rows: 12% 66% 13%;
+  border-bottom: 2px solid #ffffff;
+  margin-right: 10px;
+}
+.table .gameTable .reviewBox #reviewContainer .reviewCard .reviewCardName {
+  width: 223px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  grid-row: 1;
+}
+.table .gameTable .reviewBox #reviewContainer .reviewCard .reviewCardName #criticName {
+  width: 70%;
+  font-family: "PIXY";
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.table .gameTable .reviewBox #reviewContainer .reviewCard .reviewCardName #score {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  background-color: #00ce7a;
+  font-family: "PIXY";
+  color: black;
+}
+.table .gameTable .reviewBox #reviewContainer .reviewCard #description {
+  color: #ffffff;
+  overflow: hidden;
+  max-height: 10em;
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+  line-clamp: 9;
+}
+.table .gameTable .reviewBox #reviewContainer .reviewCard .readBtn {
+  width: 100px;
+  height: 40px;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  font-family: "PIXY";
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.table .gameTable .reviewBox #reviewContainer .reviewCard .readBtn:hover {
+  color: rgb(255, 255, 255);
+}
+.table .gameTable .reviewBox #reviewContainer .reviewCard .readBtn:after {
+  content: "";
+  background: rgb(0, 0, 0);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.4s;
+}
+.table .gameTable .reviewBox #reviewContainer .reviewCard .readBtn:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.table .gameTable .reviewBox #reviewContainer #showReview {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(48, 48, 48, 0.7);
+  font-family: "PIXY";
+  color: #000000;
+}
+.table .gameTable .reviewBox #reviewContainer #showReview .revirewCont .reviewTable {
+  margin: 15% auto;
+  width: 500px;
+  background-color: #ffffff;
+  box-shadow: 10px 10px 0px 0px black;
+  border: 4px solid #000;
+  padding: 35px;
+}
+.table .gameTable .reviewBox #reviewContainer #showReview .revirewCont .reviewTable .ReviewHeader {
+  display: flex;
+  height: 50px;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.table .gameTable .reviewBox #reviewContainer #showReview .revirewCont .reviewTable .ReviewHeader #reviewName {
+  font-size: 25px;
+  width: 80%;
+}
+.table .gameTable .reviewBox #reviewContainer #showReview .revirewCont .reviewTable .ReviewHeader #revirewScore {
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+.table .gameTable .reviewBox #reviewContainer #showReview .revirewCont .reviewTable .ReviewHeader #closeReview {
+  width: 35px;
+  height: 35px;
+  background-color: black;
+  border: none;
+  background-image: url(/icon/close.png);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  border: 3px solid transparent;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.table .gameTable .reviewBox #reviewContainer #showReview .revirewCont .reviewTable .ReviewHeader #closeReview:hover {
+  background-color: red;
+  border: 3px solid black;
+  transition: all 0.5s;
+}
+.table .gameInfo {
+  height: 97%;
+  font-family: "PIXY";
+  color: #ffffff;
+  display: grid;
+  grid-template-rows: 20% 40% 20% 20%;
+  background: linear-gradient(rgba(255, 255, 255, 0.0823529412), rgba(255, 255, 255, 0.062745098));
+  border-bottom: 2px solid #ffffff;
+  padding: 2%;
+}
+.table .gameInfo .gameMainInfo {
+  align-items: center;
+  display: grid;
+  grid-template-rows: 40% 40% 20%;
+  border-bottom: 1px solid #ffffff;
+}
+.table .gameInfo .gameMainInfo #GameName {
+  height: max-content;
+  line-height: 35px;
+  font-size: 35px;
+}
+.table .gameInfo .gameMainInfo .platformInfo {
+  display: flex;
+  gap: 2%;
+  align-items: center;
+  padding-block: 2%;
+}
+.table .gameInfo .gameMainInfo .platformInfo #platform {
+  border: 1px solid #ffffff;
+  padding: 2%;
+  padding-left: 10px;
+  font-size: 20px;
+}
+.table .gameInfo .gameMainInfo .dateReleased {
+  font-size: 18px;
+}
+.table .gameInfo .mainScoreInfo {
+  display: grid;
+  width: 100%;
+  align-items: center;
+}
+.table .gameInfo .mainScoreInfo .criticScoreInfo {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-row-gap: 10px;
+}
+.table .gameInfo .mainScoreInfo .criticScoreInfo .scoreColumnText {
+  width: 100%;
+  height: 70px;
+  display: grid;
+}
+.table .gameInfo .mainScoreInfo .criticScoreInfo .scoreColumnText .scoreText {
+  font-size: 20px;
+}
+.table .gameInfo .mainScoreInfo .criticScoreInfo .scoreDisplay {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  color: #000000;
+  justify-self: end;
+}
+.table .gameInfo .mainScoreInfo .criticScoreInfo .colorLine {
+  width: 100%;
+  height: 8px;
+  grid-column: 1/3;
+}
+.table .gameInfo .personScoreCont {
+  display: grid;
+  width: 100%;
+  align-items: center;
+}
+.table .gameInfo .personScoreCont .containerWithInfo {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-row-gap: 10px;
+}
+.table .gameInfo .personScoreCont .containerWithInfo .columnText {
+  display: grid;
+}
+.table .gameInfo .personScoreCont .containerWithInfo .columnText .scoreText {
+  font-size: 20px;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #personScoreVisible {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #ffffff;
+  font-size: 35px;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: end;
+  transition: all 0.3s;
+}
+.table .gameInfo .personScoreCont .containerWithInfo .estimations {
+  display: flex;
+  width: 100%;
+  height: 10px;
+  gap: 1%;
+  grid-column: 1/3;
+}
+.table .gameInfo .personScoreCont .containerWithInfo .estimations .estimation {
+  width: 40px;
+  height: 10px;
+  opacity: 0.2;
+  transition: all 0.3s;
+}
+.table .gameInfo .personScoreCont .containerWithInfo .estimations .estimation:hover {
+  opacity: 1;
+  transition: all 0.3s;
+}
+.table .gameInfo .personScoreCont .containerWithInfo .estimations .estimation .estBtn {
+  cursor: pointer;
+  position: absolute;
+  border: none;
+  width: 40px;
+  height: 10px;
+  background-color: transparent;
+}
+.table .gameInfo .personScoreCont .containerWithInfo .estimations .red {
+  background-color: #ff6874;
+}
+.table .gameInfo .personScoreCont .containerWithInfo .estimations .orange {
+  background-color: #ffbd3f;
+}
+.table .gameInfo .personScoreCont .containerWithInfo .estimations .green {
+  background-color: #00ce7a;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: max-content;
+  overflow: auto;
+  background-color: rgba(48, 48, 48, 0.7);
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable {
+  color: #000000;
+  margin: 10% auto;
+  width: 450px;
+  height: max-content;
+  background-color: #ffffff;
+  border: 3px solid #000;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable .reviewPersonHeader {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 2px solid #000000;
+  margin-bottom: 20px;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable .reviewPersonHeader .personTitle {
+  font-size: 30px;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable .reviewPersonHeader #closeUserReview {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border: none;
+  background-image: url(/icon/close.png);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  border: 3px solid transparent;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable .reviewPersonHeader #closeUserReview:hover {
+  background-color: red;
+  border: 3px solid black;
+  transition: all 0.5s;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable #personGameInfo {
+  width: 100%;
+  height: 200px;
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-template-rows: 33% 33% 33%;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #000000;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable #personGameInfo #peronGameImage {
+  grid-column: 1;
+  grid-row: 1/3;
+  width: 120px;
+  height: 180px;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable #personGameInfo #personGameName {
+  grid-column: 2;
+  font-size: 25px;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable #personGameInfo .personReviewScore {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable #personGameInfo .personReviewScore #personScoreDisplay {
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable #reviewBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable #reviewBody #personDescription {
+  font-family: "PIXY";
+  font-size: 18px;
+  border: 3px solid #000000;
+  margin-block: 10px;
+  min-width: 450px;
+  max-width: 450px;
+  min-height: 150px;
+  max-height: 150px;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable #addUserReview {
+  margin-top: 10px;
+  width: 120px;
+  height: 40px;
+  font-family: "PIXY";
+  font-size: 20px;
+  background-color: #ffffff;
+  border: 3px solid #000;
+  box-shadow: 5px 5px 0px 0px black;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.table .gameInfo .personScoreCont .containerWithInfo #reviewPersonWindow .reviewPersonCont .reviewPersonTable #addUserReview:hover {
+  background-color: green;
+  color: #ffffff;
+  box-shadow: none;
+  transition: all 0.3s;
+}
+.table .gameInfo .buyCont {
+  display: grid;
+  align-self: flex-end;
+}
+.table .gameInfo .buyCont .buyText {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+.table .gameInfo .buyCont #buyBtn {
+  width: 100%;
+  height: 60px;
+  font-family: "PIXY";
+  font-size: 25px;
+  border: none;
+  color: #000000;
+  background-color: #ffffff;
+  border: 2px dashed #ffffff;
+  transition: all 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.table .gameInfo .buyCont #buyBtn:hover {
+  color: #ffffff;
+  background-color: #000000;
+  border: 2px dashed #ffffff;
+  transition: all 0.3s;
+}
+
+.platformSection {
+  width: 1200px;
+  display: grid;
+  justify-self: center;
+  grid-row-gap: 10px;
+  margin-bottom: 5%;
+}
+.platformSection .platformHead {
+  color: #ffffff;
+  font-family: "PIXY";
+  font-size: 24px;
+  border-bottom: 1px solid #ffffff;
+}
+.platformSection #scoreCardTable {
+  width: max-content;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 20px;
+  grid-column-gap: 57px;
+}
+.platformSection #scoreCardTable .scoreCard {
+  width: 350px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(rgba(255, 255, 255, 0.0823529412), rgba(255, 255, 255, 0.062745098));
+  border-bottom: 1px solid #ffffff;
+  padding: 5%;
+}
+.platformSection #scoreCardTable .scoreCard .platformName {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #ffffff;
+  font-family: "PIXY";
+  font-size: 24px;
+}
+.platformSection #scoreCardTable .scoreCard .platformScore {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "PIXY";
+  background-color: #00ce7a;
+  font-size: 36px;
+  color: #000000;
+}
+
+.detailsInfo {
+  width: 1200px;
+  margin: 5%;
+  display: grid;
+  justify-self: center;
+}
+.detailsInfo .detailsHeader {
+  color: #ffffff;
+  font-family: "PIXY";
+  font-size: 25px;
+  width: 100%;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 10px;
+}
+.detailsInfo .detailsBody {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 60% 37.5%;
+  grid-column-gap: 30px;
+  color: #ffffff;
+  font-family: "PIXY";
+}
+.detailsInfo .detailsBody .detailsLeftSide {
+  display: grid;
+  padding: 10px;
+  width: 100%;
+  letter-spacing: 1px;
+  background: linear-gradient(rgba(255, 255, 255, 0.0823529412), rgba(255, 255, 255, 0.062745098));
+}
+.detailsInfo .detailsBody .detailsLeftSide #descriptionHeader {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.detailsInfo .detailsBody .detailsLeftSide #detailsDescription {
+  font-size: 18px;
+  height: 80px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+}
+.detailsInfo .detailsBody .detailsLeftSide #moreInfoBtn {
+  width: 100%;
+}
+.detailsInfo .detailsBody .detailsLeftSide #moreInfoBtn #showInfo, .detailsInfo .detailsBody .detailsLeftSide #moreInfoBtn #hideInfo {
+  border: none;
+  background-color: transparent;
+  font-family: "PIXY";
+  color: rgba(255, 255, 255, 0.5647058824);
+  font-size: 15px;
+  transition: all 0.3s;
+}
+.detailsInfo .detailsBody .detailsLeftSide #moreInfoBtn #showInfo:hover, .detailsInfo .detailsBody .detailsLeftSide #moreInfoBtn #hideInfo:hover {
+  color: #ff6874;
+  transition: all 0.3s;
+}
+.detailsInfo .detailsBody .detailsLeftSide .agesInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.detailsInfo .detailsBody .detailsLeftSide .agesInfo #ageImage {
+  width: 40px;
+  height: 60px;
+}
+.detailsInfo .detailsBody .detailsLeftSide .agesInfo #ageSpan {
+  width: 130px;
+  flex-wrap: wrap;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.5647058824);
+}
+.detailsInfo .detailsBody .detailsRightSide {
+  display: grid;
+  font-size: 18px;
+}
+.detailsInfo .detailsBody .detailsRightSide .detailsPlatform {
+  padding: 10px;
+  display: grid;
+  background: linear-gradient(rgba(255, 255, 255, 0.0823529412), rgba(255, 255, 255, 0.062745098));
+  align-items: center;
+}
+.detailsInfo .detailsBody .detailsRightSide .detailsPlatform .detailsPlatformInfo {
+  display: flex;
+  width: 100%;
+}
+.detailsInfo .detailsBody .detailsRightSide .detailsPlatform .detailsPlatformInfo #detailsPlatformList {
+  color: rgba(255, 255, 255, 0.5647058824);
+  width: 100%;
+  display: flex;
+}
+.detailsInfo .detailsBody .detailsRightSide .detailsPlatform #detailsDate {
+  color: rgba(255, 255, 255, 0.5647058824);
+}
+.detailsInfo .detailsBody .detailsRightSide .devDetails {
+  padding: 10px;
+  margin-top: 10px;
+  background: linear-gradient(rgba(255, 255, 255, 0.0823529412), rgba(255, 255, 255, 0.062745098));
+  display: grid;
+  align-items: center;
+}
+.detailsInfo .detailsBody .detailsRightSide .devDetails #devList {
+  color: rgba(255, 255, 255, 0.5647058824);
+}
+.detailsInfo .detailsBody .detailsRightSide .publisherInfo {
+  display: flex;
+  margin-right: 10px;
+}
+.detailsInfo .detailsBody .detailsRightSide .publisherInfo #publisherList {
+  color: rgba(255, 255, 255, 0.5647058824);
+  margin-left: 10px;
+}
+.detailsInfo .detailsBody .detailsRightSide .genres {
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(rgba(255, 255, 255, 0.0823529412), rgba(255, 255, 255, 0.062745098));
+}
+.detailsInfo .detailsBody .detailsRightSide .genres #genresList {
+  color: rgba(255, 255, 255, 0.5647058824);
+}
+
+/*# sourceMappingURL=gamecard.css.map */

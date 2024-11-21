@@ -1,0 +1,136 @@
+.New, .Future{
+    width: max-content;
+    height: max-content;
+    margin: 5%;
+    display: flex;
+    flex-flow: column;
+    justify-self: center;
+    .Title{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        height: 60px;
+        gap: 1%;
+        .TitleText{
+            display: flex;
+            align-items: center;
+            gap: 2%;
+            width: 93.5%;
+            height: 50px;
+            border-bottom: 1px solid #ffffff;
+            margin-bottom: 2%;
+            h1{
+                font-family: 'PIXY';
+                color: #ffffff;
+                letter-spacing: 3px;
+
+            }
+            .NewGame{
+                color: #ffffff90;
+                font-family: 'PIXY';
+                transition: all 0.1s;
+                &:hover{
+                    color: #ffffff;
+                }
+            }
+        }
+        .funcBtn{
+            float: right;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            gap: 20%;
+            align-items:flex-end;
+            .btn{
+                padding-top: 11%;
+                width: 30px;
+                height: 30px;
+                border: none;
+                color: #ffffff;
+                background-color: transparent;
+                font-weight: bold;
+                font-size: 20px;
+                cursor: pointer;
+                transition: all 0.2s;
+                &:hover{
+                    color: red;
+                }
+            }
+        }
+    }
+    .containerForGame{
+        width: 1200px;
+        @media (max-width: 767px) {
+            width: 500px;
+          }
+          @media (min-width: 768px) and (max-width: 991px) {
+            width: 800px;
+          }
+          @media (min-width: 991px) and (max-width: 1199px) {
+            width: 1000px;
+          }
+          @media (min-width: 1200px) {
+            width: 1200px;
+          }
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        .card{
+            font-family: 'PIXY';
+            display: grid;
+            grid-template-rows: 75% 15% 10%;
+            width: 160px;
+            height: 300px;
+            align-items: center;
+            text-decoration: none;
+            padding: 10px;
+            &:hover{
+                background-color: #ffffff10;
+                h2{
+                    color: red;
+                    transition: all .2s;
+                }
+            }
+            img{
+                width: 160px;
+                height: 225px;
+                grid-row: 1;
+            }
+            h2{
+                color: #ffffff;
+                font-size: 18px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                grid-row: 2;
+                transition: all .2s;
+            }
+            .GameScore{
+                display: flex;
+                align-items: center;
+                grid-row: 3;
+                text-decoration: none;
+                #Score  {
+                    width: 30px;
+                    height: 30px;
+                    font-size: 18px;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                    color: #000000;
+                    margin-right: 5px;
+                }
+                #review{
+                    color: #ffffff;
+                    font-size: 12px;
+                }
+            }
+        }  
+    }
+}

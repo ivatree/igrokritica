@@ -1,0 +1,353 @@
+.addGame{
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(48, 48, 48, 0.7);
+    .addContent{
+        .addTable{
+            margin: 5% auto;
+            width: max-content;
+            height: 700px;
+            background-color: #ffffff;
+            box-shadow: 10px 10px 0px 0px black;
+            border: 4px solid #000;
+            padding: 35px;
+            .addHeader{
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 2px solid black;
+                p{
+                    font-family: 'PIXY';
+                    font-size: 30px;
+                }
+                .close{
+                    width: 40px;
+                    height: 40px;
+                    background-color: black;
+                    border: none;
+                    background-image: url(/icon/close.png);
+                    background-size: 25px 25px;
+                    background-repeat: no-repeat;
+                    background-position-x: 49%;
+                    background-position-y: 50%;
+                    border: 3px solid transparent;
+                    transition: all 0.5s;
+                    &:hover{
+                        background-color: red;
+                        border: 3px solid black;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+            #addBody{
+                width: 1000px;
+                display: grid;
+                grid-template-columns: 33% 33% 33%;
+                grid-template-rows: 41% 22% 10%;
+                font-family: 'PIXY';
+                font-size: 15px;
+                line-height: 0; 
+                .side{
+                    height: 500px;
+                    margin-bottom: 50px;
+                    padding: 10px;
+                    grid-row: 1;
+                    input{
+                        width: 300px;
+                        height: 30px;
+                        border: 3px solid #000000;
+                        font-family: 'PIXY';
+                        font-size: 17px;
+                        outline: none;
+                    }
+                    #platformsAdd{
+                        width: 305px;
+                        height: 30px;
+                        border: 3px solid #000000;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        &:hover{
+                            ul{
+                                display: block;
+                            }
+                        }
+                        ul{
+                            padding: 20px;
+                            height: 30px;
+                            display: none;
+                            position: absolute;
+                            list-style-type: none; 
+                            color: #000000;
+                            align-items: center;
+                            li{
+                                width: 300px;
+                                border: 1px solid #000000;
+                                background-color: #ffffff;
+                                display: flex;
+                                align-items: center;
+                                padding-inline: 10px;
+                                label {
+                                    display: flex;
+                                    width: 270px;
+                                  }
+                                input{
+                                    width: 35px;
+                                    height: 35px;
+                                    box-shadow: none;
+                                    margin-right: 10px;
+                                }
+                                .scoreForPlatform{
+                                    width: 30px;
+                                    height: 20px;
+                                    border: none;
+                                    border-bottom: 1px solid black;
+                                }
+                            }
+                        }
+                    }
+                    #criticReviewInput{
+                        width: 305px;
+                        height: 32px;
+                        border: 3px solid #000000;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        &:hover{
+                            ul{
+                                display: block;
+                            }
+                        }
+                        ul{
+                            margin-top: 20%;
+                            width: 500px;
+                            padding: 20px;
+                            display: none;
+                            position: absolute;
+                            list-style-type: none; 
+                            color: #000000;
+                            align-items: center;
+                            background-color: #ffffff;
+                            border: 1px solid #000000;
+                            li{
+                                justify-content: center;
+                                display: flex;
+                                margin-bottom: 20px;
+                                p{
+                                    width: 170px;
+                                }
+                                textarea{
+                                    width: 300px;
+                                    max-width: 300px;
+                                    min-width: 300px;
+                                    min-height: 100px;
+                                    height: auto;
+                                    border: 3px solid #000000;
+                                }
+                                #addCriticReview{
+                                    width: 100px;
+                                    height: 30px;
+                                    background-color: #ffffff;
+                                    color: black;
+                                    transition: all 0.3s;
+                                    font-family: 'PIXY';
+                                    box-shadow: 5px 5px 0px 0px black;
+                                    &:hover{
+                                        background-color: green;
+                                        color: #ffffff;
+                                        box-shadow: none;
+                                        transition: all 0.3s;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .textareaInput{
+                    grid-row: 2;
+                    grid-column: 1/all;
+                    width: 965px;
+                    height: 200px;
+                    align-self: baseline;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    #gameDescription{
+                        width: 100%;
+                        max-width: 100%;
+                        min-width: 100%;
+                        min-height: 100px;
+                        max-height: 100px;
+                        border: 3px solid #000000;
+                    }
+                }
+                .btnCon{
+                    display: flex;
+                    justify-content: center;
+                    grid-column: 1/all;
+                    gap: 30px;
+                    padding-right: 20px;
+                    grid-row: 3;
+                    button{
+                        width: 200px;
+                        height: 48px;
+                        border: 3px solid black;
+                        box-shadow: 5px 5px 0px 0px black;
+                        font-family: 'PIXY';
+                        font-size: 20px;
+                        outline: none;
+                        letter-spacing: 3px;
+                        margin-bottom: 20px;
+                    }
+                    #acceptAdding{
+                        background-color: #ffffff;
+                        color: black;
+                        transition: all 0.3s;
+                        &:hover{
+                            background-color: green;
+                            color: #ffffff;
+                            box-shadow: none;
+                            transition: all 0.3s;
+                        }
+                    }   
+                    .canelAdding{
+                        background-color: black;
+                        color: #ffffff;
+                        transition: all 0.3s;
+                        &:hover{
+                            background-color: red;
+                            box-shadow: none;
+                            transition: all 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.addNews{
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(48, 48, 48, 0.7);
+    .addNewsContent{
+        .addNewsTable{
+            margin: 5% auto;
+            width: max-content;
+            height: max-content;
+            background-color: #ffffff;
+            box-shadow: 10px 10px 0px 0px black;
+            border: 4px solid #000;
+            padding: 35px;
+            .addNewsHeader{
+                display: flex;
+                width: 100%;
+                height: 70px;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 2px solid black;
+                margin-bottom: 30px;
+                p{
+                    font-family: 'PIXY';
+                    font-size: 30px;
+                }
+                .close{
+                    width: 40px;
+                    height: 40px;
+                    background-color: black;
+                    border: none;
+                    background-image: url(/icon/close.png);
+                    background-size: 25px 25px;
+                    background-repeat: no-repeat;
+                    background-position-x: 49%;
+                    background-position-y: 50%;
+                    border: 3px solid transparent;
+                    transition: all 0.5s;
+                    &:hover{
+                        background-color: red;
+                        border: 3px solid black;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+            #addNewsBody{
+                display: flex;
+                flex-direction: column;
+                label{
+                    font-family: 'PIXY';
+                    font-size: 18px;
+                }
+                input{
+                    width: 700px;
+                    height: 30px;
+                    border: 3px solid #000000;
+                    font-family: 'PIXY';
+                    font-size: 17px;
+                    outline: none;
+                    margin-bottom: 15px;
+                }
+                textarea{
+                    width: 700px;
+                    height: 250px;
+                    border: 3px solid #000000;
+                    font-family: 'PIXY';
+                    font-size: 17px;
+                    outline: none;
+                    margin-bottom: 30px;
+                }
+                .newsSaveBtn{
+                    display: flex;
+                    width: 100%;
+                    height: 50px;
+                    justify-content: center;
+                    align-self: center;
+                    gap: 20px;
+                    button{
+                        width: 200px;
+                        height: 48px;
+                        border: 3px solid black;
+                        box-shadow: 5px 5px 0px 0px black;
+                        font-family: 'PIXY';
+                        font-size: 20px;
+                        outline: none;
+                        letter-spacing: 3px;
+                        margin-bottom: 20px;
+                    }
+                    #acceptNewsAdding{
+                        background-color: #ffffff;
+                        color: black;
+                        transition: all 0.3s;
+                        &:hover{
+                            background-color: green;
+                            color: #ffffff;
+                            box-shadow: none;
+                            transition: all 0.3s;
+                        }
+                    }   
+                    .canelAdding{
+                        background-color: black;
+                        color: #ffffff;
+                        transition: all 0.3s;
+                        &:hover{
+                            background-color: red;
+                            box-shadow: none;
+                            transition: all 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

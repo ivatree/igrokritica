@@ -1,0 +1,643 @@
+.table{
+    width: 1200px;
+    margin: 4%;
+    display: grid;
+    grid-template-columns: 60% 38%;
+    justify-self: center;
+    gap: 2%;
+    padding: 2%;    
+    margin-bottom: 70px;
+    .gameTable{
+        height: 100%;
+        font-family: 'PIXY';
+        color: #ffffff;
+        display: grid;
+        gap: 1%;
+        grid-template-rows: 55% 45%;
+        #trailer{
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(#ffffff15, #ffffff10);
+            margin-bottom: 50px;
+        }
+        .reviewBox{
+            width: 710px;
+            height: 315px;
+            .reviewHead{
+                width: 100%;
+                border-bottom: 1px solid #ffffff;
+                font-size: 24px;
+                margin-bottom: 2%;
+            }
+            #reviewContainer{
+                width: max-content;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-row-gap: 20px;
+                .reviewCard{
+                    padding: 5px;
+                    width: 223px;
+                    height: 300px;
+                    display: grid;
+                    grid-row-gap: 10px;
+                    grid-column-gap: 10px;
+                    border: none;
+                    background: linear-gradient(#ffffff15, #ffffff10);
+                    grid-template-rows: 12% 66% 13%;
+                    border-bottom: 2px solid #ffffff;
+                    margin-right: 10px;
+                    .reviewCardName{
+                        width: 223px;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        grid-row: 1;
+                        #criticName{
+                            width: 70%;                            
+                            font-family: 'PIXY';
+                            font-size: 18px;
+                            color: #ffffff;
+                            text-decoration: none;
+                            cursor: pointer;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+                        #score{
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 20px;
+                            width: 35px;
+                            height: 35px;
+                            background-color: #00ce7a;
+                            font-family: 'PIXY';
+                            color: black;
+                        }
+                    }
+                    #description{
+                        color: #ffffff;
+                        overflow: hidden;
+                        max-height: 10em;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 9;
+                        -webkit-box-orient: vertical;  
+                        line-clamp: 9;
+                    }
+                    .readBtn{
+                        width: 100px;
+                        height: 40px;
+                        background: rgb(255, 255, 255);
+                        color: rgb(0, 0, 0);
+                        border: none;
+                        font-family: 'PIXY';
+                        font-size: 16px;
+                        cursor: pointer;
+                        position: relative;
+                        z-index: 1;
+                        overflow: hidden;
+                        &:hover {
+                            color: rgb(255, 255, 255);
+                        }
+                        &:after {
+                            content: "";
+                            background: rgb(0, 0, 0);
+                            position: absolute;
+                            z-index: -1;
+                            left: -20%;
+                            right: -20%;
+                            top: 0;
+                            bottom: 0;
+                            transform: skewX(-45deg) scale(0, 1);
+                            transition: all 0.4s;
+                        }
+                        &:hover:after {
+                            transform: skewX(-45deg) scale(1, 1);
+                            -webkit-transition: all 0.4s;
+                            transition: all 0.4s;
+                        }
+                    }
+                }
+                #showReview{
+                    position: fixed;
+                    z-index: 10;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: auto;
+                    background-color: rgba(48, 48, 48, 0.7);
+                    font-family: 'PIXY';
+                    color: #000000;
+                    .revirewCont{
+                       .reviewTable{
+                        margin: 15% auto;
+                        width: 500px;
+                        background-color: #ffffff;
+                        box-shadow: 10px 10px 0px 0px black;
+                        border: 4px solid #000;
+                        padding: 35px;
+                        .ReviewHeader{
+                            display: flex;
+                            height: 50px;
+                            font-size: 20px;
+                            border-bottom: 1px solid black;
+                            margin-bottom: 20px;
+                            align-items: center;
+                            #reviewName{
+                                font-size: 25px;
+                                width: 80%;
+                            }
+                            #revirewScore{
+                                font-size: 18px;
+                                width: 40px;
+                                height: 40px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin-right: 20px;
+                            }
+                            #closeReview{
+                                width: 35px;
+                                height: 35px;
+                                background-color: black;
+                                border: none;
+                                background-image: url(/icon/close.png);
+                                background-size: 25px 25px;
+                                background-repeat: no-repeat;
+                                background-position-x: 50%;
+                                background-position-y: 50%;
+                                border: 3px solid transparent;
+                                transition: all 0.5s;
+                                cursor: pointer;
+                                &:hover{
+                                    background-color: red;
+                                    border: 3px solid black;
+                                    transition: all 0.5s;
+                                }
+                            }
+                        }
+                       } 
+                    }
+                }
+            }
+        }
+    }
+    .gameInfo{
+        height: 97%;
+        font-family: 'PIXY';
+        color: #ffffff;
+        display: grid;
+        grid-template-rows: 20% 40% 20% 20%;
+        background: linear-gradient(#ffffff15, #ffffff10);
+        border-bottom: 2px solid #ffffff;
+        padding: 2%;
+        .gameMainInfo{
+            align-items: center;
+            display: grid;
+            grid-template-rows: 40% 40% 20%;
+            border-bottom: 1px solid #ffffff;
+            #GameName{
+                height: max-content;
+                line-height: 35px;
+                font-size: 35px;
+            }
+            .platformInfo{
+                display: flex;
+                gap: 2%;
+                align-items: center;
+                padding-block: 2%;
+                #platform{
+                    border: 1px solid #ffffff;
+                    padding: 2%;
+                    padding-left: 10px;
+                    font-size: 20px;
+                }
+            }
+            .dateReleased{
+                font-size: 18px;
+            }
+        }
+        .mainScoreInfo{
+            display: grid;
+            width: 100%;
+            align-items: center;
+            .criticScoreInfo{
+                display: grid;
+                grid-template-columns: 80% 20%;
+                grid-row-gap: 10px;
+                .scoreColumnText{
+                    width: 100%;
+                    height: 70px;
+                    display: grid;
+                    .scoreText{
+                        font-size: 20px;
+                    }
+                }
+                .scoreDisplay{
+                    width: 70px;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 35px;
+                    color: #000000;
+                    justify-self: end;
+                }
+                .colorLine{
+                    width: 100%;
+                    height: 8px;
+                    grid-column: 1 / 3;
+                }
+            }
+        }
+        .personScoreCont{
+            display: grid;
+            width: 100%;
+            align-items: center;
+            .containerWithInfo{
+                display: grid;
+                grid-template-columns: 80% 20%;
+                grid-row-gap: 10px;
+                .columnText{
+                    display: grid;
+                    .scoreText{
+                        font-size: 20px;
+                    }
+                }
+                #personScoreVisible{
+                    width: 70px;
+                    height: 70px;
+                    border:1px solid #ffffff;
+                    font-size: 35px;
+                    color:#000000;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    justify-self: end;
+                    transition: all .3s;
+                }
+                .estimations{
+                    display: flex;
+                    width: 100%;
+                    height: 10px;
+                    gap: 1%;
+                    grid-column: 1 / 3;
+                    .estimation{
+                        width: 40px;
+                        height: 10px;
+                        opacity: 0.2;
+                        transition: all 0.3s;
+                        &:hover{
+                            opacity: 1;
+                            transition: all 0.3s;
+                        }
+                        .estBtn{
+                            cursor: pointer;
+                            position: absolute;
+                            border: none;
+                            width: 40px;
+                            height: 10px;
+                            background-color: transparent;
+                        }
+                    }
+                    .red { background-color: #ff6874; }
+                    .orange { background-color: #ffbd3f; }
+                    .green { background-color: #00ce7a; }
+                }
+                #reviewPersonWindow{
+                    position: fixed;
+                    z-index: 10;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: max-content;
+                    overflow: auto;
+                    background-color: rgba(48, 48, 48, 0.7);
+                    .reviewPersonCont{
+                        .reviewPersonTable{
+                            color: #000000;
+                            margin: 10% auto;
+                            width: 450px;
+                            height: max-content;
+                            background-color: #ffffff;
+                            border: 3px solid #000;
+                            padding: 35px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            .reviewPersonHeader{
+                                display: flex;
+                                width: 100%;
+                                height: 80px;
+                                align-items: center;
+                                justify-content: space-around;
+                                border-bottom: 2px solid #000000;
+                                margin-bottom: 20px;
+                                .personTitle{
+                                    font-size: 30px;
+                                }
+                                #closeUserReview{
+                                    width: 40px;
+                                    height: 40px;
+                                    background-color: black;
+                                    border: none;
+                                    background-image: url(/icon/close.png);
+                                    background-size: 25px 25px;
+                                    background-repeat: no-repeat;
+                                    background-position-x: 50%;
+                                    background-position-y: 50%;
+                                    border: 3px solid transparent;
+                                    transition: all 0.5s;
+                                    cursor: pointer;
+                                    &:hover{
+                                        background-color: red;
+                                        border: 3px solid black;
+                                        transition: all 0.5s;
+                                    }
+                                }
+                            }
+                            #personGameInfo{
+                                width: 100%;
+                                height: 200px;
+                                display: grid;
+                                grid-template-columns: 30% auto;
+                                grid-template-rows: 33% 33% 33%;
+                                margin-bottom: 10px;
+                                border-bottom: 2px solid #000000;
+                                #peronGameImage{
+                                    grid-column: 1;
+                                    grid-row: 1/3;
+                                    width: 120px;
+                                    height: 180px;
+                                }
+                                #personGameName{
+                                    grid-column: 2;
+                                    font-size: 25px;
+                                }
+                                .personReviewScore{
+                                    grid-column: 2;
+                                    grid-row: 2;
+                                    display: flex;
+                                    width: 100%;
+                                    align-items: center;
+                                    #personScoreDisplay{
+                                        margin-left: 10px;
+                                        width: 40px;
+                                        height: 40px;
+                                        font-size: 30px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                    }
+                                }
+                            }
+                            #reviewBody{
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 20px;
+                                #personDescription{
+                                    font-family: 'PIXY';
+                                    font-size: 18px;
+                                    border: 3px solid #000000;
+                                    margin-block: 10px;
+                                    min-width: 450px;
+                                    max-width: 450px;
+                                    min-height: 150px;
+                                    max-height: 150px;
+                                }
+                            }
+                            #addUserReview{
+                                margin-top: 10px;
+                                width: 120px;
+                                height: 40px;
+                                font-family: 'PIXY';
+                                font-size: 20px;
+                                background-color: #ffffff;
+                                border: 3px solid #000;
+                                box-shadow: 5px 5px 0px 0px black;
+                                transition: all 0.3s;
+                                letter-spacing: 1px;
+                                cursor: pointer;
+                                &:hover{
+                                    background-color: green;
+                                    color: #ffffff;
+                                    box-shadow: none;
+                                    transition: all 0.3s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .buyCont{
+            display: grid;
+            align-self: flex-end;
+            .buyText{
+                font-size: 25px;
+                padding-bottom: 10px;
+            }
+            #buyBtn{
+                width: 100%;
+                height: 60px;
+                font-family: 'PIXY';
+                font-size: 25px;
+                border: none;
+                color: #000000;
+                background-color: #ffffff;
+                border: 2px dashed  #ffffff;
+                transition: all .3s;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:hover{
+                    color: #ffffff;
+                    background-color: #000000;
+                    border: 2px dashed  #ffffff;
+                    transition: all .3s;
+                }
+            }
+        }
+    }
+}
+.platformSection{
+    width: 1200px;
+    display: grid;
+    justify-self: center;
+    grid-row-gap: 10px;
+    margin-bottom: 5%;
+    .platformHead{
+        color: #ffffff;
+        font-family: 'PIXY';
+        font-size: 24px;
+        border-bottom: 1px solid #ffffff;
+    }
+    #scoreCardTable{
+        width: max-content;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-row-gap: 20px;
+        grid-column-gap: 57px ;
+        .scoreCard{
+            width: 350px;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(#ffffff15, #ffffff10);
+            border-bottom: 1px solid #ffffff;
+            padding: 5%;
+            .platformName{
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                color: #ffffff;
+                font-family: 'PIXY';
+                font-size: 24px;
+            }
+            .platformScore{
+                width: 70px;
+                height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: 'PIXY';
+                background-color: #00ce7a;
+                font-size: 36px;
+                color: #000000;
+            }
+        }
+    }
+}
+.detailsInfo{
+    width: 1200px;
+    margin: 5%;
+    display: grid;
+    justify-self: center;
+    .detailsHeader{
+        color: #ffffff;
+        font-family: 'PIXY';
+        font-size: 25px;
+        width: 100%;
+        border-bottom: 1px solid #ffffff;
+        margin-bottom: 10px;
+    }
+    .detailsBody{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 60% 37.5%;
+        grid-column-gap: 30px;
+        color: #ffffff;
+        font-family: 'PIXY';
+        .detailsLeftSide{
+            display: grid;
+            padding: 10px;
+            width: 100%;
+            letter-spacing: 1px;
+            background: linear-gradient(#ffffff15, #ffffff10);
+            #descriptionHeader{
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            #detailsDescription{
+                font-size: 18px;
+                height: 80px;
+                margin-bottom: 10px;
+                overflow: hidden;                
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;  
+                line-clamp: 4;
+            }
+            #moreInfoBtn{
+                width: 100%;
+               #showInfo, #hideInfo{
+                    border: none;
+                    background-color: transparent;
+                    font-family: 'PIXY';
+                    color: #ffffff90;
+                    font-size: 15px;
+                    transition: all .3s;
+                    &:hover{
+                        color: #ff6874;
+                        transition: all .3s;
+                    }
+                }
+            }
+            .agesInfo{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-top: 10px;
+                #ageImage{
+                    width: 40px;
+                    height: 60px;
+                }
+                #ageSpan{
+                    width: 130px;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    color: #ffffff90;
+                }
+            }
+        }
+        .detailsRightSide{
+            display: grid;
+            font-size: 18px;
+            .detailsPlatform{
+                padding: 10px;
+                display: grid;
+                background: linear-gradient(#ffffff15, #ffffff10);
+                align-items: center;
+                .detailsPlatformInfo{
+                    display: flex;
+                    width: 100%;
+                    #detailsPlatformList{
+                      color: #ffffff90;
+                      width: 100%;
+                      display: flex;
+                    }
+                }
+                #detailsDate{
+                    color: #ffffff90;
+                }
+            }
+            .devDetails{
+                padding: 10px;
+                margin-top: 10px;
+                background: linear-gradient(#ffffff15, #ffffff10);
+                display: grid;
+                align-items: center;
+                #devList{
+                    color: #ffffff90;
+                }
+            }
+            .publisherInfo{
+                display: flex;
+                margin-right: 10px;
+               #publisherList{
+                    color: #ffffff90;
+                    margin-left: 10px;
+                } 
+            }
+            .genres{
+                padding: 10px;
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+                background: linear-gradient(#ffffff15, #ffffff10);
+                #genresList{
+                    color: #ffffff90;
+                }
+            }
+        }
+    }
+}

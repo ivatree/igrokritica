@@ -1,0 +1,79 @@
+.aboutTable {
+  width: 100%;
+  height: max-content;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-family: "PIXY";
+  color: #ffffff;
+  margin-top: 5%;
+}
+.aboutTable .aboutHeader {
+  display: grid;
+  border-bottom: 1px solid #ffffff;
+}
+.aboutTable .aboutHeader .aboutHeadTitle {
+  font-size: 40px;
+  display: flex;
+  justify-self: center;
+  margin-bottom: 30px;
+}
+.aboutTable .aboutHeader .aboutHeadDesc {
+  font-size: 20px;
+  justify-self: center;
+  margin-bottom: 50px;
+}
+.aboutTable .aboutHeader img {
+  justify-self: center;
+  width: 800px;
+  height: 320px;
+  margin-bottom: 50px;
+}
+.aboutTable .aboutBody {
+  width: 800px;
+  margin-bottom: 100px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  color: black;
+}
+.aboutTable .aboutBody ul, .aboutTable .aboutBody ol {
+  padding-inline: 10%;
+  font-size: 30px;
+  line-height: 30px;
+}
+.aboutTable .aboutBody ul li, .aboutTable .aboutBody ol li {
+  margin-top: 10px;
+  font-size: 20px;
+}
+.aboutTable .aboutBody .color {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.aboutTable .aboutBody .color #colors {
+  display: flex;
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+}
+.aboutTable .aboutBody .color .high {
+  background-color: #00ce7a;
+}
+.aboutTable .aboutBody .color .mid {
+  background-color: #ffbd3f;
+}
+.aboutTable .aboutBody .color .low {
+  background-color: #ff6874;
+}
+.aboutTable .aboutBody .text {
+  padding-inline: 10%;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+/*# sourceMappingURL=about.css.map */

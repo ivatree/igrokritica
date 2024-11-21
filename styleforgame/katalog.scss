@@ -1,0 +1,222 @@
+.gridTableHeader{
+    display: flex;
+    justify-content: center;
+    font-family: 'PIXY';
+    .head{
+        width: 1200px;
+        h1{
+            height: 50px;
+            font-size: 150px;
+            color: #ffffff;
+        }
+        p{
+            color: #ffffff;
+            font-size: 30px;
+            letter-spacing: 1px;
+        }
+    }
+}
+.containerForAllGames{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin: 5%;
+    #gridTable{
+        width: 1200px;
+        height: max-content;
+        display: grid;
+        grid-template-columns: 30.5% 30.5% 30.5%;
+        grid-column-gap: 34px;
+        .gameCard{
+            text-decoration: none;
+            height: 71%;
+            display: grid;
+            grid-template-columns: 40% 60%;
+            grid-column-gap: 5px;
+            grid-template-rows: 15% 15% 52% 10%;
+            padding: 20px;
+            font-family: 'PIXY';
+            color: #ffffff;
+            background: linear-gradient(#ffffff15, #ffffff10);
+            border-bottom: 1px solid #ffffff;
+            letter-spacing: 1px;
+            transition: all .3s;
+            &:hover{
+                transition: all .3s;
+                border-bottom: 1px solid #ff0000;
+                box-shadow: 0px 2px #ff0000;
+                background: linear-gradient(#ffffff35, #ffffff10);
+            }
+            img{
+                width: 120px;
+                height: 180px;
+                grid-row: 1 / 4;
+            }
+            #name{
+                color: #ffffff;
+                font-size: 18px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            #date{
+                font-size: 16px;
+                color: #ffffff95;
+            }
+            #description{
+                font-size: 16px;
+                color: #ffffff95;
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;  
+                line-clamp: 5;
+                overflow: hidden;
+            }
+            .scoreCont{
+                display: flex;
+                grid-column: 2;
+                grid-row: 4;
+                align-items: center;                
+                #score{
+                    margin-top: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center ;
+                    width: 27px;
+                    height: 27px;
+                    background-color: #00ce7a;
+                    color: #000000;
+                    font-size: 17px;
+                    margin-right: 5px;
+
+                }
+                #scoreText{
+                    font-family: 'PIXY';
+                    color: #ffffff;
+                    font-size: 12px;
+                    margin-top: 4px;
+                }
+            }
+        }
+    }
+    .settigns{
+        height: max-content;
+        font-family: 'PIXY';
+        color: #ffffff;
+        background: linear-gradient(#ffffff10, #ffffff00);
+        padding: 30px;
+        .setHeader{
+            display: flex;
+            align-items: center;
+            border-bottom:1px solid #ffffff;
+            width: 100%;
+            h1{ 
+                width: 100%;
+                height: 30px;
+            }
+            .deleteSortBtn{
+                width: 30px;
+                height: 30px;
+                border: none;
+                background-color: transparent;
+                color: #ffffff;
+                transition: all .2s;
+                background-image: url("/icon/reset.png");
+                background-size: 20px 20px;
+                background-repeat: no-repeat;
+                background-position: center;
+                transform: rotate(0deg);
+                &:hover{
+                    transform: rotate(-360deg);
+                    background-image: url("/icon/resetr.png");
+                    transition: all 0.5s;
+                }
+            }
+        }
+        .filter{
+            display: grid;
+            width: 100%;
+            height: max-content;
+            border-bottom: 1px solid #ffffff;
+            padding-bottom: 30px;
+            .sortList{
+                height: 120px;
+                max-height: 120px;
+                overflow: hidden;
+                transition: max-height 0.5s ease;
+                div{
+                    display: flex;
+                    justify-self: left;
+                    .button-custom, .button-platform, .button-options{
+                        border: none;
+                        background-color: transparent;
+                        color: #ffffff;
+                        font-family: 'PIXY';
+                        font-size: 15px;
+                        display: flex;
+                        align-items: center;
+                        justify-self: left;
+                        letter-spacing: 2px;
+                        margin-bottom: 5px;
+                        &:hover{
+                            font-weight: 600;
+                            color: red;
+                            .checkbox{
+                                border-color:#ffffff;
+                                transition: all .2s;
+                            }
+                        }
+                        label{
+                            cursor: pointer;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;  
+                        }
+                        .checkbox{
+                            width: 22px;
+                            height: 22px;
+                            border: 1px solid #ffffff30;
+                            margin-right: 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            img{
+                                display: none;
+                                width: 18px;
+                            }
+                        }
+                    }
+                    .clicked{
+                        font-weight: 600;
+                        color: red;
+                        .checkbox{
+                            border-color:#ffffff;
+                            img{
+                                display: block;
+                                width: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+            .hideAndSick{
+                width: 100%;
+                height: 100%;
+                button{
+                    font-family: 'PIXY';
+                    width: 100%;
+                    height: 30px;
+                    color: #ffffff90;
+                    background-color: transparent;
+                    border: none;
+                    transition: all 0.2s;
+                    cursor: pointer;
+                    &:hover{
+                        color: #ff0000;
+                        transition: all 0.2s;
+                    }
+                }
+            }            
+        }
+    }
+}

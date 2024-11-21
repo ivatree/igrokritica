@@ -1,0 +1,200 @@
+.MostPopularPlatform {
+  width: max-content;
+  height: max-content;
+  margin: 5%;
+  display: flex;
+  flex-flow: column;
+  justify-self: center;
+  font-family: "PIXY";
+}
+.MostPopularPlatform .Title {
+  display: grid;
+  text-align: center;
+  align-items: center;
+  grid-template-columns: 95% 5%;
+  grid-template-rows: 40% 50%;
+  width: 100%;
+  height: 90px;
+  margin-bottom: 0.5%;
+}
+.MostPopularPlatform .Title .TitleText {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  width: 100%;
+}
+.MostPopularPlatform .Title .TitleText:hover {
+  color: #ffffff;
+}
+.MostPopularPlatform .Title .TitleText h1 {
+  font-family: "PIXY";
+  color: #ffffff;
+  letter-spacing: 3px;
+}
+.MostPopularPlatform .Title .TitleText .NewGame {
+  color: rgba(255, 255, 255, 0.5647058824);
+  font-family: "PIXY";
+  transition: all 0.1s;
+}
+.MostPopularPlatform .Title .funcBtn {
+  grid-row: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+}
+.MostPopularPlatform .Title .funcBtn .btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  color: #ffffff;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.MostPopularPlatform .Title .funcBtn .btn:hover {
+  color: red;
+}
+.MostPopularPlatform .Title .PlatformList {
+  width: 97.5%;
+  font-family: "PIXY";
+}
+.MostPopularPlatform .Title .PlatformList .platforms {
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  border-top: 1px solid #ffffff;
+}
+.MostPopularPlatform .Title .PlatformList .platforms li {
+  transition: all 0.2s;
+  margin-right: 10px;
+  padding-top: 5px;
+  transition: border-color 0.3s, color 0.3s;
+}
+.MostPopularPlatform .Title .PlatformList .platforms li button {
+  height: 17px;
+  border: none;
+  background-color: transparent;
+  font-family: "PIXY";
+  color: rgba(255, 255, 255, 0.5647058824);
+  font-size: 15px;
+}
+.MostPopularPlatform .Title .PlatformList .platforms li .active {
+  transition: all 0.2s ease-in-out;
+  color: #ffffff;
+}
+.MostPopularPlatform .containerForGames {
+  width: 1200px;
+  display: flex;
+  line-height: 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+@media (max-width: 767px) {
+  .MostPopularPlatform .containerForGames {
+    width: 500px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .MostPopularPlatform .containerForGames {
+    width: 800px;
+  }
+}
+@media (min-width: 991px) and (max-width: 1199px) {
+  .MostPopularPlatform .containerForGames {
+    width: 900px;
+  }
+}
+@media (min-width: 1200px) {
+  .MostPopularPlatform .containerForGames {
+    width: 1200px;
+  }
+}
+.MostPopularPlatform .containerForGames #widthCnt {
+  width: max-content;
+  display: flex;
+}
+.MostPopularPlatform .containerForGames #widthCnt .cards {
+  width: 580px;
+  padding: 10px;
+  height: 150px;
+  font-family: "PIXY";
+  display: grid;
+  grid-template-columns: 19% 51% 30%;
+  grid-template-rows: 48% 48% 2%;
+  margin-right: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+}
+.MostPopularPlatform .containerForGames #widthCnt .cards:hover {
+  transition: all 0.2s;
+  background-color: rgba(255, 255, 255, 0.062745098);
+}
+.MostPopularPlatform .containerForGames #widthCnt .cards:hover .names {
+  color: red;
+  transition: all 0.2s;
+}
+.MostPopularPlatform .containerForGames #widthCnt .cards img {
+  grid-row: 1/all;
+  width: 100px;
+  height: 150px;
+}
+.MostPopularPlatform .containerForGames #widthCnt .cards .names {
+  transition: all 0.2s;
+  line-height: normal;
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: white;
+  font-size: 20px;
+  grid-column: 2;
+  grid-row: 1;
+}
+.MostPopularPlatform .containerForGames #widthCnt .cards #Score {
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: self-end;
+  background-color: green;
+}
+.MostPopularPlatform .containerForGames #widthCnt .cards .PlatformName {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 15px;
+  padding-inline: 10px;
+  width: max-content;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+}
+.MostPopularPlatform .containerForGames #widthCnt .cards .acclaimText {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  font-size: 12px;
+  color: #ffffff;
+  grid-column: 3;
+}
+.MostPopularPlatform .containerForGames #widthCnt .cards .scoreLine {
+  grid-column: 2/all;
+  background-color: green;
+  width: 100%;
+  height: 6px;
+}
+
+/*# sourceMappingURL=popularPlatform.css.map */

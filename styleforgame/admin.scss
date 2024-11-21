@@ -1,0 +1,236 @@
+.gridTableHeader{
+    display: flex;
+    justify-content: center;
+    font-family: 'PIXY';
+    .head{
+        width: 1200px;
+        h1{
+            height: 50px;
+            font-size: 150px;
+            color: #ffffff;
+        }
+        p{
+            color: #ffffff;
+            font-size: 30px;
+            letter-spacing: 1px;
+        }
+    }
+}
+.containerForAllGames{
+    display: grid;
+    justify-self: center;
+    width: 1200px;
+    min-height: 800px;
+    margin: 5%;
+    align-items: center;
+    .adminInfo{
+        display: flex;
+        height: 220px;
+        margin-bottom: 10px;
+        .adminDescription{
+            margin-left: 10px;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            .adminTitle{
+                background: #ffffff15;
+                color: #ffffff;
+                font-family: 'PIXY';
+                margin: 0;
+                margin-top: 10px;
+                padding: 20px;
+                letter-spacing: 1.5px;
+                
+            }
+            li{
+                background: #ffffff15;
+                color: #ffffff;
+                font-family: 'PIXY';
+                padding: 10px;
+                letter-spacing: 1.5px;
+            }
+        }
+        .btnForChanges{
+            width: 400px;
+            height: 200px;
+            display: grid;
+            grid-template-columns: 74% 26%;
+            align-self: center;
+            .addNewGame{
+                margin-left: 10px;
+                height: 90px;
+                width: 90px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #ffffff15;
+                transition: all .3s;
+                border: none;
+                &:hover{
+                    background: #ffffff25;
+                    transition: all .3s;
+                    img{
+                        opacity: 100%;
+                    }
+                }
+                img{
+                    transition: all .3s;
+                    opacity: 50%;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            .addBtn{
+                width: 100%;
+                height: 90px;
+                background: #ffffff15;
+                transition: all .3s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                font-family: 'PIXY';
+                font-size: 20px;
+                color: #ffffff90;
+                margin-bottom: 10px;
+                gap: 20px;
+                &:hover{
+                    color: #ffffff;
+                    background: #ffffff25;
+                    transition: all .3s;
+                    img{
+                        opacity: 100%;
+                    }
+                }
+                img{
+                    transition: all .3s;
+                    width: 30px;
+                    height: 30px;
+                    opacity: 30%;
+                }
+            }
+        }
+    }
+    #gridTable{
+        width: 1200px;
+        display: grid;
+        .gameCard{
+            width: auto;
+            text-decoration: none;
+            height: 65%;
+            display: grid;
+            grid-column-gap: 5px;
+            grid-template-columns: 10% 75% 15%;
+            grid-template-rows: 15% 15% 45% 20%;
+            padding: 20px;
+            font-family: 'PIXY';
+            color: #ffffff;
+            background: linear-gradient(#ffffff15, #ffffff10);
+            border-bottom: 1px solid #ffffff;
+            letter-spacing: 1px;
+            transition: all .3s;
+            &:hover{
+                transition: all .3s;
+                border-bottom: 1px solid #ff0000;
+                box-shadow: 0px 2px #ff0000;
+                background: linear-gradient(#ffffff35, #ffffff10);
+            }
+            img{
+                grid-column: 1;
+                width: 90px;
+                height: 120px;
+                grid-row: 1 / 4;
+            }
+            #name{
+                grid-column: 2;
+                color: #ffffff;
+                font-size: 18px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            #date{
+                grid-column: 2;
+                font-size: 16px;
+                color: #ffffff95;
+            }
+            #description{
+                grid-column: 2;
+                width: 400px;
+                font-size: 16px;
+                color: #ffffff95;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;  
+                line-clamp: 4;
+                overflow: hidden;
+            }
+            .scoreCont{
+                display: flex;
+                grid-column: 2;
+                grid-row: 4;
+                align-items: center;                
+                #score{
+                    margin-top: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center ;
+                    width: 27px;
+                    height: 27px;
+                    background-color: #00ce7a;
+                    color: #000000;
+                    font-size: 17px;
+                    margin-right: 5px;
+
+                }
+                #scoreText{
+                    font-family: 'PIXY';
+                    color: #ffffff;
+                    font-size: 12px;
+                    margin-top: 4px;
+                }
+            }
+            .btnCon{
+                grid-column: 3;
+                grid-row: 1 / all;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                #setBtn{
+                    width: 40px;
+                    height: 40px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-color: transparent;
+                    border: 1px solid #ffffff10;
+                    transition: all .2s;
+                    margin-right: 10px;
+                    background-image: url("/icon/pen.png");
+                    background-size: 25px 25px;
+                    &:hover{
+                        border: 1px solid #ffffff90;
+                        transition: all .2s;
+                    }
+                }
+                #deleteBtn{
+                    width: 40px;
+                    height: 40px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-color: transparent;
+                    border: 1px solid #ffffff10;
+                    transition: all .2s;
+                    margin-right: 10px;
+                    background-image: url("/icon/remove.png");
+                    background-size: 30px 30px;
+                    &:hover{
+                        border: 1px solid #ffffff90;
+                        transition: all .2s;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,110 @@
+footer{
+    display: grid;
+    width: 100%;
+    height: max-content;
+    justify-content: center;
+    text-align: center;
+    border-top: 1px solid #ffffff50;
+    font-family: 'PIXY';
+    background-color: rgba(0, 0, 0, 0.7);
+    filter: blur(10%);
+    h2{
+        color: #ffffff;
+        margin: 5%;
+    }
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: 0.2s;
+        &:hover{
+            .img{
+                background-image: url("/icon/logo.gif");
+            }
+            .name{
+                color: rgb(255, 0, 0);
+                transition: color 0.2s;
+            }
+        }
+        .img{
+            width: 50px;
+            height: 50px;
+            background-image: url("/icon/logo.png");
+            background-size: 50px 50px;
+        }
+        .name{
+            display: flex;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            font-family: 'PIXY';
+            font-size: 30px;
+            transition: color 0.2s;
+        }
+    }
+    .containerForInfo{
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        gap: 15%;   
+        width: 100%;
+        margin-bottom: 5%;
+        line-height: 100%;
+        @media (max-width: 767px) {
+            width: 300px;
+          }
+          @media (min-width: 768px) and (max-width: 991px) {
+            width: 400px;
+          }
+          @media (min-width: 991px) and (max-width: 1199px) {
+            width: 100%;
+          }
+          @media (min-width: 1200px) {
+            width: 100%;
+          }
+        
+        h2{
+            margin-bottom: 10%;
+        }
+        a{
+            text-decoration: none;
+            color: #ffffff90;
+            transition: all 0.2s;
+            &:hover{
+                color: red;
+            }
+        }
+        .info{
+            display: grid;
+        }
+        .links{
+            color: #ffffff90;
+            img{
+                width: 30px;
+                height: 30px;
+                transition: transform 0.2s;
+                &:hover{
+                    transform: scale(1.07);
+                    transition: transform 0.2s;
+                    filter: sepia(3) hue-rotate(-70deg) saturate(1000);
+                }
+            }
+        }
+        .friends{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            a{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 30px;
+                img{
+                    margin-left: 10px;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
