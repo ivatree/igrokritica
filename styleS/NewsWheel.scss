@@ -1,3 +1,22 @@
+@import url("https://fonts-online.ru/fonts/pixy");
+@font-face {
+	font-family: 'PIXY bold'; 
+	src: url("/font/Pixy.ttf"); 
+}
+@media (max-width: 767px) {
+    .NewsPicture{
+        margin-block: 50px !important;
+    }
+    .logo{
+        display: none !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (min-width: 991px) and (max-width: 1199px) {
+}
+@media (min-width: 1200px) {
+}
 .NewsPicture{
     height: 360px;
     background-color: #0c0c0c;

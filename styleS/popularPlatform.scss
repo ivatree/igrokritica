@@ -1,3 +1,44 @@
+@import url("https://fonts-online.ru/fonts/pixy");
+@font-face {
+	font-family: 'PIXY bold'; 
+	src: url("/font/Pixy.ttf"); 
+}
+@media (max-width: 767px) {
+    .MostPopularPlatform{
+        width: 400px !important;
+        .Title{
+            grid-template-columns: 90% 10% !important;
+            margin-bottom: 20px !important;
+            .TitleText{
+                h1{
+                    font-size: 20px !important;
+                }
+                .NewGame{
+                    font-size: 13px !important;
+                }
+            }
+            .funcBtn{
+                gap: 5px !important;
+            }
+        }
+        .full{
+            display: none !important;
+        }
+        .min{
+            display: block !important;
+        }
+        .cards{
+            width: 380px !important;
+            grid-template-columns: 29% 51% 20% !important;
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (min-width: 991px) and (max-width: 1199px) {
+}
+@media (min-width: 1200px) {
+}
 .MostPopularPlatform{
     width: max-content;
     height: max-content;
@@ -54,6 +95,7 @@
                 &:hover{
                     color: red;
                 }
+
             }
         }
         .PlatformList{
@@ -77,6 +119,9 @@
                         font-family: 'PIXY';
                         color: #ffffff90;
                         font-size: 15px;
+                        .min{
+                            display: none;
+                        }
                     }
                     .active{
                         transition: all 0.2s ease-in-out;

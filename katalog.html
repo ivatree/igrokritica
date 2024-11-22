@@ -30,6 +30,9 @@
           ),
           url(/pictures/fone.gif);
         background-size: contain;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
     </style>
   </head>
@@ -79,6 +82,14 @@
         <a href="future.html">Календарь</a>
       </div>
       <div class="input-container">
+        <div class="searchCont">
+          <button id="searchBtn"><img src="/icon/search.png" /></button>
+          <div class="openSearch" style="display: none">
+            <input id="openedSearchInput" type="text" placeholder="ПОИСК" />
+            <div class="topline"></div>
+            <div class="underline"></div>
+          </div>
+        </div>
         <input id="searchInput" type="text" placeholder="ПОИСК" />
         <div class="topline"></div>
         <div class="underline"></div>
@@ -87,9 +98,13 @@
       <div class="RegContainer" id="regCon">
         <button id="openRegForm">РЕГИСТРАЦИЯ</button>
         <button id="showKab">кабинет</button>
+        <div id="kabOverlay"></div>
         <div id="kabinet">
           <div class="kabTable">
-            <span class="kabHeader">Личный кабинет</span>
+            <div class="kabHead">
+              <span class="kabHeader">Личный кабинет</span>
+              <button id="closeKab"></button>
+            </div>
             <span class="nameText">Имя: <span id="userName"></span></span>
             <span class="emailText">Email: <span id="userEmail"></span></span>
             <button id="logOut">Выйти</button>
@@ -158,166 +173,179 @@
         <p>Выбирай - в какое приключение отправиться дальше!</p>
       </div>
     </div>
+    <button id="openSort">Сортировка</button>
+    <div id="overlay"></div>
     <div class="containerForAllGames">
       <div id="gridTable">
         <!-- контейнер для карточек -->
       </div>
-      <aside class="settigns">
-        <div class="setHeader">
-          <h1>Сортировка</h1>
-          <button class="deleteSortBtn" id="deleteSort"></button>
-        </div>
-        <div class="filter">
-          <h3>Платформа</h3>
-          <div class="sortList" id="sortPlatfroms">
-            <div>
-              <button class="button-platform" data-platforms="PC">
-                <div class="checkbox"><img src="/icon/gal.png" /></div>
-                <label>PC</label>
-              </button>
-            </div>
-            <div>
-              <button class="button-platform" data-platforms="PlayStation 5">
-                <div class="checkbox">
-                  <img src="/icon/gal.png" />
-                </div>
-                <label>PlayStation 5</label>
-              </button>
-            </div>
-            <div>
-              <button class="button-platform" data-platforms="Xbox X">
-                <div class="checkbox"><img src="/icon/gal.png" /></div>
-                <label>Xbox X</label>
-              </button>
-            </div>
-            <div>
-              <button class="button-platform" data-platforms="PlayStation 3">
-                <div class="checkbox">
-                  <img src="/icon/gal.png" />
-                </div>
-                <label>PlayStation 3</label>
-              </button>
-            </div>
-            <div>
-              <button class="button-platform" data-platforms="Xbox 360">
-                <div class="checkbox">
-                  <img src="/icon/gal.png" />
-                </div>
-                <label>Xbox 360</label>
-              </button>
-            </div>
-            <div>
-              <button class="button-platform" data-platforms="PlayStation 4">
-                <div class="checkbox">
-                  <img src="/icon/gal.png" />
-                </div>
-                <label>PlayStation 4</label>
-              </button>
-            </div>
-            <div>
-              <button class="button-platform" data-platforms="Xbox One">
-                <div class="checkbox"><img src="/icon/gal.png" /></div>
-                <label>Xbox One</label>
-              </button>
-            </div>
-
-            <div>
-              <button class="button-platform" data-platforms="Nintendo Switch">
-                <div class="checkbox"><img src="/icon/gal.png" /></div>
-                <label>Nintendo Switch</label>
-              </button>
-            </div>
-            <div>
-              <button class="button-platform" data-platforms="IOS">
-                <div class="checkbox"><img src="/icon/gal.png" /></div>
-                <label>IOS</label>
-              </button>
-            </div>
+      <aside class="settigns" id="sidebar">
+        <div id="sortCont">
+          <div class="setHeader">
+            <h1>Сортировка</h1>
+            <button class="deleteSortBtn" id="deleteSort"></button>
+            <button id="closeSideBar"></button>
           </div>
-          <div class="hideAndSick">
-            <button class="showBtn" id="showPlatforms">
-              показать все &#8744;
-            </button>
-            <button class="hideBtn" id="hidePlatforms" style="display: none">
-              спрятать &#8743;
-            </button>
-          </div>
-          <h3>Жанры</h3>
-          <div class="sortList" id="sortGenres">
-            <div>
-              <button class="button-custom" data-genre="Action Adventure">
-                <div class="checkbox"><img src="/icon/gal.png" /></div>
-                <label>Action Adventure</label>
-              </button>
-            </div>
-            <div>
-              <button class="button-custom" data-genre="Action RPG">
-                <div class="checkbox">
-                  <img src="/icon/gal.png" />
-                </div>
-                <label>Action RPG</label>
-              </button>
-            </div>
-            <div>
-              <button class="button-custom" data-genre="Open-World Action">
-                <div class="checkbox"><img src="/icon/gal.png" /></div>
-                <label>Open-World Action</label>
-              </button>
-            </div>
-            <div>
-              <button class="button-custom" data-genre="Survival">
-                <div class="checkbox"><img src="/icon/gal.png" /></div>
-                <label>Survival</label>
-              </button>
-            </div>
-            <div>
-              <button class="button-custom" data-genre="Tactical FPS">
-                <div class="checkbox"><img src="/icon/gal.png" /></div>
-                <label>Tactical FPS</label>
-              </button>
-            </div>
-            <div>
-              <button class="button-custom" data-genre="Third-Person Adventure">
-                <div class="checkbox"><img src="/icon/gal.png" /></div>
-                <label>Third-Person Adventure</label>
-              </button>
-            </div>
-          </div>
-          <div class="hideAndSick">
-            <button class="showBtn" id="showGenre">показать все &#8744;</button>
-            <button class="hideBtn" id="hideGenre" style="display: none">
-              спрятать &#8743;
-            </button>
-          </div>
-          <h3>Сортировка:</h3>
-          <div class="sortList" id="sortOption">
-            <div>
-              <button class="button-options" data-option="dateFirst">
-                <div class="checkbox"><img src="/icon/gal.png" /></div>
-                <label>От новых к старым</label>
-              </button>
-            </div>
-            <div>
-              <button class="button-options" data-option="dateLast">
-                <div class="checkbox"><img src="/icon/gal.png" /></div>
-                <label>От старых к новым</label>
-              </button>
-            </div>
-            <div>
+          <div class="filter">
+            <h3>Платформа</h3>
+            <div class="sortList" id="sortPlatfroms">
               <div>
-                <button class="button-options" data-option="raitingFirst">
+                <button class="button-platform" data-platforms="PC">
+                  <div class="checkbox"><img src="/icon/gal.png" /></div>
+                  <label>PC</label>
+                </button>
+              </div>
+              <div>
+                <button class="button-platform" data-platforms="PlayStation 5">
                   <div class="checkbox">
                     <img src="/icon/gal.png" />
                   </div>
-                  <label>Лучшие</label>
+                  <label>PlayStation 5</label>
                 </button>
               </div>
-              <button class="button-options" data-option="raitingLast">
-                <div class="checkbox">
-                  <img src="/icon/gal.png" />
-                </div>
-                <label>Худшие</label>
+              <div>
+                <button class="button-platform" data-platforms="Xbox X">
+                  <div class="checkbox"><img src="/icon/gal.png" /></div>
+                  <label>Xbox X</label>
+                </button>
+              </div>
+              <div>
+                <button class="button-platform" data-platforms="PlayStation 3">
+                  <div class="checkbox">
+                    <img src="/icon/gal.png" />
+                  </div>
+                  <label>PlayStation 3</label>
+                </button>
+              </div>
+              <div>
+                <button class="button-platform" data-platforms="Xbox 360">
+                  <div class="checkbox">
+                    <img src="/icon/gal.png" />
+                  </div>
+                  <label>Xbox 360</label>
+                </button>
+              </div>
+              <div>
+                <button class="button-platform" data-platforms="PlayStation 4">
+                  <div class="checkbox">
+                    <img src="/icon/gal.png" />
+                  </div>
+                  <label>PlayStation 4</label>
+                </button>
+              </div>
+              <div>
+                <button class="button-platform" data-platforms="Xbox One">
+                  <div class="checkbox"><img src="/icon/gal.png" /></div>
+                  <label>Xbox One</label>
+                </button>
+              </div>
+
+              <div>
+                <button
+                  class="button-platform"
+                  data-platforms="Nintendo Switch"
+                >
+                  <div class="checkbox"><img src="/icon/gal.png" /></div>
+                  <label>Nintendo Switch</label>
+                </button>
+              </div>
+              <div>
+                <button class="button-platform" data-platforms="IOS">
+                  <div class="checkbox"><img src="/icon/gal.png" /></div>
+                  <label>IOS</label>
+                </button>
+              </div>
+            </div>
+            <div class="hideAndSick">
+              <button class="showBtn" id="showPlatforms">
+                показать все &#8744;
               </button>
+              <button class="hideBtn" id="hidePlatforms" style="display: none">
+                спрятать &#8743;
+              </button>
+            </div>
+            <h3>Жанры</h3>
+            <div class="sortList" id="sortGenres">
+              <div>
+                <button class="button-custom" data-genre="Action Adventure">
+                  <div class="checkbox"><img src="/icon/gal.png" /></div>
+                  <label>Action Adventure</label>
+                </button>
+              </div>
+              <div>
+                <button class="button-custom" data-genre="Action RPG">
+                  <div class="checkbox">
+                    <img src="/icon/gal.png" />
+                  </div>
+                  <label>Action RPG</label>
+                </button>
+              </div>
+              <div>
+                <button class="button-custom" data-genre="Open-World Action">
+                  <div class="checkbox"><img src="/icon/gal.png" /></div>
+                  <label>Open-World Action</label>
+                </button>
+              </div>
+              <div>
+                <button class="button-custom" data-genre="Survival">
+                  <div class="checkbox"><img src="/icon/gal.png" /></div>
+                  <label>Survival</label>
+                </button>
+              </div>
+              <div>
+                <button class="button-custom" data-genre="Tactical FPS">
+                  <div class="checkbox"><img src="/icon/gal.png" /></div>
+                  <label>Tactical FPS</label>
+                </button>
+              </div>
+              <div>
+                <button
+                  class="button-custom"
+                  data-genre="Third-Person Adventure"
+                >
+                  <div class="checkbox"><img src="/icon/gal.png" /></div>
+                  <label>Third-Person Adventure</label>
+                </button>
+              </div>
+            </div>
+            <div class="hideAndSick">
+              <button class="showBtn" id="showGenre">
+                показать все &#8744;
+              </button>
+              <button class="hideBtn" id="hideGenre" style="display: none">
+                спрятать &#8743;
+              </button>
+            </div>
+            <h3>Сортировка:</h3>
+            <div class="sortList" id="sortOption">
+              <div>
+                <button class="button-options" data-option="dateFirst">
+                  <div class="checkbox"><img src="/icon/gal.png" /></div>
+                  <label>От новых к старым</label>
+                </button>
+              </div>
+              <div>
+                <button class="button-options" data-option="dateLast">
+                  <div class="checkbox"><img src="/icon/gal.png" /></div>
+                  <label>От старых к новым</label>
+                </button>
+              </div>
+              <div>
+                <div>
+                  <button class="button-options" data-option="raitingFirst">
+                    <div class="checkbox">
+                      <img src="/icon/gal.png" />
+                    </div>
+                    <label>Лучшие</label>
+                  </button>
+                </div>
+                <button class="button-options" data-option="raitingLast">
+                  <div class="checkbox">
+                    <img src="/icon/gal.png" />
+                  </div>
+                  <label>Худшие</label>
+                </button>
+              </div>
             </div>
           </div>
         </div>

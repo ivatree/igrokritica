@@ -1,6 +1,51 @@
+@import url("https://fonts-online.ru/fonts/pixy");
 @font-face {
 	font-family: 'PIXY bold'; 
-	src: url(/font/Pixy.ttf); 
+	src: url("/font/Pixy.ttf"); 
+}
+@media (max-width: 767px) {
+    .logo{
+        display: flex!important;
+        align-items: center!important;
+        justify-content: center!important;
+        text-decoration: none!important;
+        .name{
+            font-size: 18px!important;
+        }
+        .img{
+            width: 30px!important;
+            background-size:30px 30px!important;
+
+        }
+    }
+
+    #kabinet{
+        position: absolute !important;
+        z-index: 999 !important;
+        transform: translate(-80%, 50%) !important;
+        #closeKab{
+            display: block !important;
+        }
+
+    }
+    .pages{
+        display: none !important;
+    }
+    .DropDownPages{
+        display: block !important; 
+    }
+    .searchCont{
+        display: block !important;
+    }
+    #searchInput{
+        display: none !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (min-width: 991px) and (max-width: 1199px) {
+}
+@media (min-width: 1200px) {
 }
 header{
     top: 0;
@@ -34,6 +79,8 @@ header{
             height: 50px;
             background-image: url("/icon/logo.png");
             background-size: 50px 50px;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .name{
             display: flex;
@@ -47,12 +94,6 @@ header{
     .DropDownPages{
         font-family: "PIXY";
         display: none;
-        @media (max-width: 767px) {
-            display: block;
-        }
-        @media (min-width: 768px) and (max-width: 991px) {
-            display: block;
-        }
         .menu{
             width: 35px;
             height: 35px;
@@ -179,6 +220,34 @@ header{
     }
     .input-container {
         position: relative;
+        .searchCont{
+            display: none;
+            #searchBtn{
+                width: 35px;
+                height: 35px;
+                font-size: 30px;
+                background-color: #000000;
+                border: 1px solid #000000;
+                border: none;
+                transition: all 0.3s;
+                cursor: pointer;
+                &:hover{
+                    color: #000000;
+                    border: 1px solid #ffffff;
+                }
+                &:active{
+                    color: #000000;
+                    border: 1px solid #ffffff;
+                }
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            #openSearch{
+                display: none;
+            }
+        }
         #searchInput{
             height: 30px;
             border: 2px solid #ffffff;
@@ -327,6 +396,16 @@ header{
                 transition: all 0.5s;
             }
         }
+        #kabOverlay{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
         #kabinet{
             position: absolute;
             display: none;
@@ -335,10 +414,9 @@ header{
             z-index: 1;
             box-shadow: 7px 7px 0px 0px #ffffff;
             border: 2px solid #ffffff;
-            line-height: 25px;
             width: 250px;
             height: 300px;
-            margin-top: 360px;
+            margin-top: 370px;
             .kabTable{
                 display: grid;
                 grid-template-columns: 100%;
@@ -348,9 +426,25 @@ header{
                 color: #ffffff;
                 font-family: 'PIXY';
                 align-items: center;
-                .kabHeader{
+                .kabHead{
                     grid-row: 1;
-                    font-size: 25px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    #closeKab{
+                        display: none;
+                        width: 35px;
+                        height: 35px;
+                        background-color: transparent;
+                        border: none;
+                        background-image: url("/icon/close.png");
+                        background-size: 20px;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                    .kabHeader{
+                        font-size: 25px;
+                    }
                 }
                 .nameText{
                     grid-row: 2;

@@ -31,3 +31,18 @@ hideGenre.addEventListener("click", function () {
   hideGenre.style.display = "none";
   showGenre.style.display = "block";
 });
+
+const sidebar = document.getElementById("sidebar");
+const toggleButton = document.getElementById("openSort");
+const overlay = document.getElementById("overlay");
+const closeSideBar = document.getElementById("closeSideBar");
+
+toggleButton.addEventListener("click", () => {
+  sidebar.style.display = "block";
+  overlay.style.display = "block";
+});
+
+closeSideBar.addEventListener("click", () => {
+  sidebar.style.display = "none";
+  overlay.style.display = "none";
+});

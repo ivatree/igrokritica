@@ -1,23 +1,59 @@
+@import url("https://fonts-online.ru/fonts/pixy");
+@font-face {
+	font-family: 'PIXY bold'; 
+	src: url("/font/Pixy.ttf"); 
+}
+@media (max-width: 767px) { 
+    .latestNews{
+        width: 400px !important;
+        .latestNewsHeader{
+            font-size: 10px !important;
+            margin-bottom: 20 !important;
+        }
+        #newsCardsContainer{
+            display: block !important;
+            width: 390px !important;
+            #newsCard{
+                width: 100% !important;
+                height: 110px !important;
+                display: grid !important;
+                grid-template-columns: 42% 58% !important;
+                grid-template-rows: auto;
+                #newsGamePicture{
+                    grid-column: 1 !important;
+                    grid-row: 1 / all;
+                    width: 150px !important;
+                    height: 100px !important;
+                }
+                #newsGameText {
+                    grid-column: 2 !important;
+                    margin-bottom: 0 !important;
+                    
+                }
+                #newsGameDescription{
+                    grid-column: 2 !important;
+                    height: 70px !important;
+                    -webkit-line-clamp: 4 !important;
+                    line-clamp: 4 !important;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (min-width: 991px) and (max-width: 1199px) {
+}
+@media (min-width: 1200px) {
+}
 .latestNews{
-    width: 1200px;
     margin-block: 5%;
     display: flex;
     flex-flow: column;
     justify-self: center;
+    justify-content: center;
     font-family: 'PIXY';
     letter-spacing: 1.5px;
-    @media (max-width: 767px) {
-        width: 500px;
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        width: 800px;
-    }
-    @media (min-width: 991px) and (max-width: 1199px) {
-        width: 900px;
-    }
-    @media (min-width: 1200px) {
-        width: 1200px;
-    }
     .latestNewsHeader{
         width: 100%;
         height: 60px;
@@ -29,32 +65,13 @@
     #newsCardsContainer{
         gap: 1%;
         display: flex;
-        @media (max-width: 767px) {
-            width: 500px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-        @media (min-width: 768px) and (max-width: 991px) {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-        @media (min-width: 991px) and (max-width: 1199px) {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
+        justify-content: center;
         #newsCard{
             width: 220px;    
             height: 320px;           
             padding: 10px;
             border-bottom: 1px solid #ffffff;
-            display: flex;
-            flex-direction: column;
+            display: grid;
             text-decoration: none;
             transition: 0.3s;
             &:hover{

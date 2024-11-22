@@ -2,21 +2,37 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuButton = document.querySelector(".menu");
   const openMenu = document.querySelector(".openMenu");
   const kabBtn = document.getElementById("showKab");
+  const closeKab = document.getElementById("closeKab");
   const kab = document.getElementById("kabinet");
+  const overlay = document.getElementById("kabOverlay");
 
   function openKabinet() {
     if (kab.classList.contains("showkab")) {
       kab.style.display = "none";
+      overlay.style.display = "none";
       kab.classList.remove("showkab");
     } else {
+      overlay.style.display = "block";
       kab.style.display = "block";
       setTimeout(() => kab.classList.add("showkab"), 10);
     }
   }
 
+  closeKab.addEventListener("click", function () {
+    overlay.style.display = "none";
+    kab.style.display = "none";
+    kab.classList.remove("showkab");
+  });
+
   kabBtn.addEventListener("click", function (event) {
     event.stopPropagation();
     openKabinet();
+  });
+
+  overlay.addEventListener("click", function () {
+    overlay.style.display = "none";
+    kab.style.display = "none";
+    kab.classList.remove("showkab");
   });
 
   function toggleMenu() {

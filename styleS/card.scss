@@ -1,3 +1,36 @@
+@import url("https://fonts-online.ru/fonts/pixy");
+@font-face {
+	font-family: 'PIXY bold'; 
+	src: url("/font/Pixy.ttf"); 
+}
+@media (max-width: 767px) {
+    .New, .Future{
+        width: 400px !important;
+        .Title{
+            margin-bottom: 20px !important;
+            .TitleText{
+                h1{
+                    font-size: 20px !important;
+                }
+                .NewGame{
+                    font-size: 13px !important;
+                }
+            }
+            .funcBtn{
+                gap: 10% !important;
+                .btn{
+                    padding-top: 24% !important;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (min-width: 991px) and (max-width: 1199px) {
+}
+@media (min-width: 1200px) {
+}
 .New, .Future{
     width: max-content;
     height: max-content;

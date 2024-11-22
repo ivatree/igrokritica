@@ -1,3 +1,41 @@
+@import url("https://fonts-online.ru/fonts/pixy");
+@font-face {
+  font-family: "PIXY bold";
+  src: url("/font/Pixy.ttf");
+}
+@media (max-width: 767px) {
+  #openSort {
+    display: block !important;
+  }
+  .gridTableHeader {
+    margin-left: 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .gridTableHeader .head {
+    width: 400px !important;
+  }
+  .gridTableHeader .head h1 {
+    font-size: 100px !important;
+  }
+  .gridTableHeader .head p {
+    font-size: 18px !important;
+  }
+  #gridTable {
+    grid-template-columns: auto !important;
+  }
+  .settigns {
+    display: none;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 380px !important;
+    z-index: 999 !important;
+  }
+  .settigns #closeSideBar {
+    display: block !important;
+  }
+}
 .gridTableHeader {
   display: flex;
   justify-content: center;
@@ -15,6 +53,28 @@
   color: #ffffff;
   font-size: 30px;
   letter-spacing: 1px;
+}
+
+#openSort {
+  margin-left: 25px;
+  display: none;
+  border: none;
+  background: linear-gradient(rgba(255, 255, 255, 0.0823529412), rgba(255, 255, 255, 0.062745098));
+  color: #ffffff;
+  font-family: "PIXY";
+  width: 100px;
+  height: 30px;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.99);
+  z-index: 1;
 }
 
 .containerForAllGames {
@@ -107,6 +167,11 @@
   background: linear-gradient(rgba(255, 255, 255, 0.062745098), rgba(255, 255, 255, 0));
   padding: 30px;
 }
+@media (max-width: 767px) {
+  .containerForAllGames .settigns .settigns {
+    display: none;
+  }
+}
 .containerForAllGames .settigns .setHeader {
   display: flex;
   align-items: center;
@@ -118,6 +183,7 @@
   height: 30px;
 }
 .containerForAllGames .settigns .setHeader .deleteSortBtn {
+  margin-right: 10px;
   width: 30px;
   height: 30px;
   border: none;
@@ -134,6 +200,19 @@
   transform: rotate(-360deg);
   background-image: url("/icon/resetr.png");
   transition: all 0.5s;
+}
+.containerForAllGames .settigns .setHeader #closeSideBar {
+  display: none;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  transition: all 0.2s;
+  background-image: url("/icon/close.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .containerForAllGames .settigns .filter {
   display: grid;

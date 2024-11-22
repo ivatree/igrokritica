@@ -1,3 +1,23 @@
+@import url("https://fonts-online.ru/fonts/pixy");
+@font-face {
+	font-family: 'PIXY bold'; 
+	src: url("/font/Pixy.ttf"); 
+}
+@media (max-width: 767px) {
+    footer{
+        height: max-content !important;
+    }
+    .containerForInfo{
+        display: grid !important;
+        gap: 20px !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (min-width: 991px) and (max-width: 1199px) {
+}
+@media (min-width: 1200px) {
+}
 footer{
     display: grid;
     width: 100%;
@@ -32,6 +52,8 @@ footer{
             height: 50px;
             background-image: url("/icon/logo.png");
             background-size: 50px 50px;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .name{
             display: flex;
@@ -50,19 +72,6 @@ footer{
         width: 100%;
         margin-bottom: 5%;
         line-height: 100%;
-        @media (max-width: 767px) {
-            width: 300px;
-          }
-          @media (min-width: 768px) and (max-width: 991px) {
-            width: 400px;
-          }
-          @media (min-width: 991px) and (max-width: 1199px) {
-            width: 100%;
-          }
-          @media (min-width: 1200px) {
-            width: 100%;
-          }
-        
         h2{
             margin-bottom: 10%;
         }
@@ -106,5 +115,8 @@ footer{
                 }
             }
         }
+    }
+    p{
+        color: #ffffff;
     }
 }

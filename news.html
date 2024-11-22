@@ -77,6 +77,14 @@
         <a href="future.html">Календарь</a>
       </div>
       <div class="input-container">
+        <div class="searchCont">
+          <button id="searchBtn"><img src="/icon/search.png" /></button>
+          <div class="openSearch" style="display: none">
+            <input id="openedSearchInput" type="text" placeholder="ПОИСК" />
+            <div class="topline"></div>
+            <div class="underline"></div>
+          </div>
+        </div>
         <input id="searchInput" type="text" placeholder="ПОИСК" />
         <div class="topline"></div>
         <div class="underline"></div>
@@ -85,9 +93,13 @@
       <div class="RegContainer" id="regCon">
         <button id="openRegForm">РЕГИСТРАЦИЯ</button>
         <button id="showKab">кабинет</button>
+        <div id="kabOverlay"></div>
         <div id="kabinet">
           <div class="kabTable">
-            <span class="kabHeader">Личный кабинет</span>
+            <div class="kabHead">
+              <span class="kabHeader">Личный кабинет</span>
+              <button id="closeKab"></button>
+            </div>
             <span class="nameText">Имя: <span id="userName"></span></span>
             <span class="emailText">Email: <span id="userEmail"></span></span>
             <button id="logOut">Выйти</button>

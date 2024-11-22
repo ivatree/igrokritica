@@ -1,6 +1,42 @@
+@import url("https://fonts-online.ru/fonts/pixy");
 @font-face {
   font-family: "PIXY bold";
-  src: url(/font/Pixy.ttf);
+  src: url("/font/Pixy.ttf");
+}
+@media (max-width: 767px) {
+  .logo {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+  }
+  .logo .name {
+    font-size: 18px !important;
+  }
+  .logo .img {
+    width: 30px !important;
+    background-size: 30px 30px !important;
+  }
+  #kabinet {
+    position: absolute !important;
+    z-index: 999 !important;
+    transform: translate(-80%, 50%) !important;
+  }
+  #kabinet #closeKab {
+    display: block !important;
+  }
+  .pages {
+    display: none !important;
+  }
+  .DropDownPages {
+    display: block !important;
+  }
+  .searchCont {
+    display: block !important;
+  }
+  #searchInput {
+    display: none !important;
+  }
 }
 header {
   top: 0;
@@ -34,6 +70,8 @@ header .logo .img {
   height: 50px;
   background-image: url("/icon/logo.png");
   background-size: 50px 50px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 header .logo .name {
   display: flex;
@@ -46,16 +84,6 @@ header .logo .name {
 header .DropDownPages {
   font-family: "PIXY";
   display: none;
-}
-@media (max-width: 767px) {
-  header .DropDownPages {
-    display: block;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  header .DropDownPages {
-    display: block;
-  }
 }
 header .DropDownPages .menu {
   width: 35px;
@@ -184,6 +212,34 @@ header .pages .dropdown .dropdown-content .column #allKat:hover {
 }
 header .input-container {
   position: relative;
+}
+header .input-container .searchCont {
+  display: none;
+}
+header .input-container .searchCont #searchBtn {
+  width: 35px;
+  height: 35px;
+  font-size: 30px;
+  background-color: #000000;
+  border: 1px solid #000000;
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+header .input-container .searchCont #searchBtn:hover {
+  color: #000000;
+  border: 1px solid #ffffff;
+}
+header .input-container .searchCont #searchBtn:active {
+  color: #000000;
+  border: 1px solid #ffffff;
+}
+header .input-container .searchCont #searchBtn img {
+  width: 20px;
+  height: 20px;
+}
+header .input-container .searchCont #openSearch {
+  display: none;
 }
 header .input-container #searchInput {
   height: 30px;
@@ -333,6 +389,16 @@ header .RegContainer #openRegForm:hover:after, header .RegContainer #showKab:hov
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
+header .RegContainer #kabOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
 header .RegContainer #kabinet {
   position: absolute;
   display: none;
@@ -341,10 +407,9 @@ header .RegContainer #kabinet {
   z-index: 1;
   box-shadow: 7px 7px 0px 0px #ffffff;
   border: 2px solid #ffffff;
-  line-height: 25px;
   width: 250px;
   height: 300px;
-  margin-top: 360px;
+  margin-top: 370px;
 }
 header .RegContainer #kabinet .kabTable {
   display: grid;
@@ -356,8 +421,24 @@ header .RegContainer #kabinet .kabTable {
   font-family: "PIXY";
   align-items: center;
 }
-header .RegContainer #kabinet .kabTable .kabHeader {
+header .RegContainer #kabinet .kabTable .kabHead {
   grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+header .RegContainer #kabinet .kabTable .kabHead #closeKab {
+  display: none;
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border: none;
+  background-image: url("/icon/close.png");
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+header .RegContainer #kabinet .kabTable .kabHead .kabHeader {
   font-size: 25px;
 }
 header .RegContainer #kabinet .kabTable .nameText {

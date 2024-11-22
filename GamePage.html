@@ -20,6 +20,7 @@
     <style>
       body {
         width: auto;
+        height: auto;
         top: 0;
         bottom: 0;
         margin: 0;
@@ -29,7 +30,7 @@
             rgba(0, 0, 0, 0.8)
           ),
           url(/pictures/fone.gif);
-        background-size: contain;
+          background-size: contain;
       }
     </style>
   </head>
@@ -79,6 +80,14 @@
         <a href="future.html">Календарь</a>
       </div>
       <div class="input-container">
+        <div class="searchCont">
+          <button id="searchBtn"><img src="/icon/search.png" /></button>
+          <div class="openSearch" style="display: none">
+            <input id="openedSearchInput" type="text" placeholder="ПОИСК" />
+            <div class="topline"></div>
+            <div class="underline"></div>
+          </div>
+        </div>
         <input id="searchInput" type="text" placeholder="ПОИСК" />
         <div class="topline"></div>
         <div class="underline"></div>
@@ -87,9 +96,13 @@
       <div class="RegContainer" id="regCon">
         <button id="openRegForm">РЕГИСТРАЦИЯ</button>
         <button id="showKab">кабинет</button>
+        <div id="kabOverlay"></div>
         <div id="kabinet">
           <div class="kabTable">
-            <span class="kabHeader">Личный кабинет</span>
+            <div class="kabHead">
+              <span class="kabHeader">Личный кабинет</span>
+              <button id="closeKab"></button>
+            </div>
             <span class="nameText">Имя: <span id="userName"></span></span>
             <span class="emailText">Email: <span id="userEmail"></span></span>
             <button id="logOut">Выйти</button>
@@ -175,86 +188,84 @@
             </div>
           </div>
         </div>
-      </div>
-      <div id="gameInfo" class="gameInfo">
-        <div id="gameMainInfo" class="gameMainInfo">
-          <span id="GameName"></span>
-          <div class="platformInfo">
-            <span id="platform"></span>
+        <div id="gameInfo" class="gameInfo">
+          <div id="gameMainInfo" class="gameMainInfo">
+            <span id="GameName"></span>
+            <div class="platformInfo">
+              <span id="platform"></span>
+            </div>
+            <span class="dateReleased"
+              >Дата релиза: <span id="dateReleased" class="dateReleased"></span
+            ></span>
           </div>
-          <span class="dateReleased"
-            >Дата релиза: <span id="dateReleased" class="dateReleased"></span
-          ></span>
-        </div>
-        <div id="mainScoreInfo" class="mainScoreInfo">
-          <div class="criticScoreInfo">
-            <div class="scoreColumnText">
-              <span class="scoreText">METASCORE</span>
-              <span class="descriptionScore" id="criticText"></span>
+          <div id="mainScoreInfo" class="mainScoreInfo">
+            <div class="criticScoreInfo">
+              <div class="scoreColumnText">
+                <span class="scoreText">METASCORE</span>
+                <span class="descriptionScore" id="criticText"></span>
+              </div>
+              <span class="scoreDisplay" id="criticScore"></span>
+              <div class="colorLine" id="colorCriticLine"></div>
             </div>
-            <span class="scoreDisplay" id="criticScore"></span>
-            <div class="colorLine" id="colorCriticLine"></div>
+            <div class="criticScoreInfo">
+              <div class="scoreColumnText">
+                <span class="scoreText">Оценка пользователей</span>
+                <span class="descriptionScore" id="userText"></span>
+              </div>
+              <span class="scoreDisplay" id="userScore"></span>
+              <div class="colorLine" id="colorPersonLine"></div>
+            </div>
           </div>
-          <div class="criticScoreInfo">
-            <div class="scoreColumnText">
-              <span class="scoreText">Оценка пользователей</span>
-              <span class="descriptionScore" id="userText"></span>
-            </div>
-            <span class="scoreDisplay" id="userScore"></span>
-            <div class="colorLine" id="colorPersonLine"></div>
-          </div>
-        </div>
-        <div id="personScoreCont" class="personScoreCont">
-          <div class="containerWithInfo">
-            <div class="columnText">
-              <span class="scoreText">Моя оценка</span>
-              <span class="descriptionText">Наведи и выбери оценку</span>
-            </div>
-            <span id="personScoreVisible"></span>
-            <div class="estimations">
-              <div class="estimation red"><button class="estBtn"></button></div>
-              <div class="estimation red"><button class="estBtn"></button></div>
-              <div class="estimation red"><button class="estBtn"></button></div>
-              <div class="estimation red"><button class="estBtn"></button></div>
-              <div class="estimation orange"><button class="estBtn"></button></div>
-              <div class="estimation orange"><button class="estBtn"></button></div>
-              <div class="estimation orange"><button class="estBtn"></button></div>
-              <div class="estimation green"><button class="estBtn"></button></div>
-              <div class="estimation green"><button class="estBtn"></button></div>
-              <div class="estimation green"><button class="estBtn"></button></div>
-            </div>
-            <div id="reviewPersonWindow" style="display: none;">
-              <div class="reviewPersonCont">
-                <div class="reviewPersonTable">
-                  <div class="reviewPersonHeader">
-                    <span class="personTitle">Добавить мой отзыв</span>
-                    <div id="closeUserReview"></div>
-                  </div>
-                  <div id="personGameInfo">
-                    <img id="peronGameImage" src="#">
-                    <span id="personGameName"></span>
-                    <div class="personReviewScore">
-                      <span>Моя оценка: </span>
-                      <span id="personScoreDisplay"></span>
+          <div id="personScoreCont" class="personScoreCont">
+            <div class="containerWithInfo">
+              <div class="columnText">
+                <span class="scoreText">Моя оценка</span>
+                <span class="descriptionText">Наведи и выбери оценку</span>
+              </div>
+              <span id="personScoreVisible"></span>
+              <div class="estimations">
+                <div class="estimation red"><button class="estBtn"></button></div>
+                <div class="estimation red"><button class="estBtn"></button></div>
+                <div class="estimation red"><button class="estBtn"></button></div>
+                <div class="estimation red"><button class="estBtn"></button></div>
+                <div class="estimation orange"><button class="estBtn"></button></div>
+                <div class="estimation orange"><button class="estBtn"></button></div>
+                <div class="estimation orange"><button class="estBtn"></button></div>
+                <div class="estimation green"><button class="estBtn"></button></div>
+                <div class="estimation green"><button class="estBtn"></button></div>
+                <div class="estimation green"><button class="estBtn"></button></div>
+              </div>
+              <div id="reviewPersonWindow" style="display: none;">
+                <div class="reviewPersonCont">
+                  <div class="reviewPersonTable">
+                    <div class="reviewPersonHeader">
+                      <span class="personTitle">Добавить мой отзыв</span>
+                      <div id="closeUserReview"></div>
                     </div>
-                  </div>
-                  <div id="reviewBody">
-                    <span>Напишите отзыв для <span id="reviewGameName"></span>
-                    <textarea id="personDescription"></textarea>
-                  </div>
-                  <button id="addUserReview">Добавить</button>
+                    <div id="personGameInfo">
+                      <img id="peronGameImage" src="#">
+                      <span id="personGameName"></span>
+                      <div class="personReviewScore">
+                        <span>Моя оценка: </span>
+                        <span id="personScoreDisplay"></span>
+                      </div>
+                    </div>
+                    <div id="reviewBody">
+                      <span>Напишите отзыв для <span id="reviewGameName"></span>
+                      <textarea id="personDescription"></textarea>
+                    </div>
+                    <button id="addUserReview">Добавить</button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="buyCont">
-          <span id="buyText" class="buyText">Тут можно купить</span>
-          <a id="buyBtn">
-            <span id="cost"></span>
-          </a>
+              <div class="buyCont">
+                <span id="buyText" class="buyText">Тут можно купить</span>
+                <a id="buyBtn">
+                  <span id="cost"></span>
+                </a>
+              </div>
         </div>
       </div>
     </div>

@@ -37,7 +37,7 @@
   </head>
   <body>
     <header>
-      <a class="logo" href="startPage.html">
+      <a class="logo" href="index.html">
         <div class="img"></div>
         <p class="name">ИгроКритика</p>
       </a>
@@ -81,6 +81,14 @@
         <a href="future.html">Календарь</a>
       </div>
       <div class="input-container">
+        <div class="searchCont">
+          <button id="searchBtn"><img src="/icon/search.png" /></button>
+          <div class="openSearch" style="display: none">
+            <input id="openedSearchInput" type="text" placeholder="ПОИСК" />
+            <div class="topline"></div>
+            <div class="underline"></div>
+          </div>
+        </div>
         <input id="searchInput" type="text" placeholder="ПОИСК" />
         <div class="topline"></div>
         <div class="underline"></div>
@@ -89,9 +97,13 @@
       <div class="RegContainer" id="regCon">
         <button id="openRegForm">РЕГИСТРАЦИЯ</button>
         <button id="showKab">кабинет</button>
+        <div id="kabOverlay"></div>
         <div id="kabinet">
           <div class="kabTable">
-            <span class="kabHeader">Личный кабинет</span>
+            <div class="kabHead">
+              <span class="kabHeader">Личный кабинет</span>
+              <button id="closeKab"></button>
+            </div>
             <span class="nameText">Имя: <span id="userName"></span></span>
             <span class="emailText">Email: <span id="userEmail"></span></span>
             <button id="logOut">Выйти</button>
@@ -232,31 +244,35 @@
         <div class="PlatformList">
           <ul class="platforms">
             <li class="borderTop">
-              <button class="button-custom" data-platforms="PC">ПК</button>
+              <button class="button-custom" data-platforms="PC"><span>ПК</span>
+              </button>
             </li>
             <li class="borderTop">
               <button class="button-custom" data-platforms="Nintendo Switch">
-                Nintendo Switch
+                <span class="full">Nintendo Switch</span>
+                <span class="min">NS</span>
               </button>
             </li>
             <li class="borderTop">
               <button class="button-custom" data-platforms="PlayStation 4">
-                PlayStation 4
+                <span class="full">PlayStation 4</span>
+                <span class="min">PS4</span>
               </button>
             </li>
             <li class="borderTop">
               <button class="button-custom" data-platforms="PlayStation 5">
-                PlayStation 5
+                <span class="full">PlayStation 5</span>
+                <span class="min">PS5</span>
               </button>
             </li>
             <li class="borderTop">
               <button class="button-custom" data-platforms="Xbox One">
-                Xbox One
+                <span>Xbox One<span>
               </button>
             </li>
             <li class="borderTop">
               <button class="button-custom" data-platforms="Xbox X">
-                Xbox X
+                <span>Xbox X<span>
               </button>
             </li>
           </ul>
@@ -314,7 +330,6 @@
             <a title="Telegram" class="tg" href="https://t.me/oOlegMayami"
               ><img src="/icon/tgWhite.png"
             /></a>
-            <p>© 2024 FANDOM, INC. ALL RIGHTS RESERVED</p>
           </div>
         </div>
         <div class="friends">
@@ -333,6 +348,7 @@
           /></a>
         </div>
       </div>
+      <p>© 2024 FANDOM, INC. ALL RIGHTS RESERVED</p>
     </footer>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="/script/move.js"></script>

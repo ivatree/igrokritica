@@ -1,3 +1,17 @@
+@import url("https://fonts-online.ru/fonts/pixy");
+@font-face {
+  font-family: "PIXY bold";
+  src: url("/font/Pixy.ttf");
+}
+@media (max-width: 767px) {
+  footer {
+    height: max-content !important;
+  }
+  .containerForInfo {
+    display: grid !important;
+    gap: 20px !important;
+  }
+}
 footer {
   display: grid;
   width: 100%;
@@ -32,6 +46,8 @@ footer .logo .img {
   height: 50px;
   background-image: url("/icon/logo.png");
   background-size: 50px 50px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 footer .logo .name {
   display: flex;
@@ -49,26 +65,6 @@ footer .containerForInfo {
   width: 100%;
   margin-bottom: 5%;
   line-height: 100%;
-}
-@media (max-width: 767px) {
-  footer .containerForInfo {
-    width: 300px;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  footer .containerForInfo {
-    width: 400px;
-  }
-}
-@media (min-width: 991px) and (max-width: 1199px) {
-  footer .containerForInfo {
-    width: 100%;
-  }
-}
-@media (min-width: 1200px) {
-  footer .containerForInfo {
-    width: 100%;
-  }
 }
 footer .containerForInfo h2 {
   margin-bottom: 10%;
@@ -112,6 +108,9 @@ footer .containerForInfo .friends a img {
   margin-left: 10px;
   width: 20px;
   height: 20px;
+}
+footer p {
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=footer.css.map */
